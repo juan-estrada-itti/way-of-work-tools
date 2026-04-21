@@ -81,4 +81,4 @@ Esto hace que el análisis de dependencias sea **determinístico** · TDA matche
 - Original · `~/.claude/skills/task-dependency-analyzer/SKILL.md`
 - Repo fuente · `ittidigital/tech_emergentes_skills` · branch `feature/task-dependency-analyzer`
 - Skill upstream nueva · `story-to-plan` (en `skills-draft/story-to-plan/`)
-- Pipeline greenfield · `shared_knowledge_iter_3/06a-pipeline.md`
+- Pipeline greenfield · `../../pipeline/pipeline-greenfield.md`

@@ -100,7 +100,7 @@ echo $ANTHROPIC_API_KEY
 ## Paso 3 · Instalar las skills (2 min · 1 comando)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/install-kit.sh | bash
+curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh | bash
 ```
 
 El script:
@@ -116,7 +116,7 @@ El script:
 
 Cloná manualmente:
 ```bash
-git clone git@github.com:ittidigital/way-of-work-tools.git ~/way-of-work-tools
+git clone git@github.com:juan-estrada-itti/way-of-work-tools.git ~/way-of-work-tools
 bash ~/way-of-work-tools/kit/install-kit.sh
 ```
 
@@ -126,7 +126,7 @@ bash ~/way-of-work-tools/kit/install-kit.sh
 
 Corré el test de validación:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/verify-kit.sh | bash
+curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/verify-kit.sh | bash
 ```
 
 Esperás ver:

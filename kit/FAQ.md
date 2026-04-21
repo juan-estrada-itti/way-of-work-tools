@@ -134,7 +134,7 @@ Alguna branch ya tiene worktree creado · o el repo está en un estado raro.
 ```bash
 # Borrar el workspace y volver a clonar limpio:
 rm -rf ~/.way-of-work-kit
-bash <(curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/install-kit.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh)
 ```
 
 ---
@@ -189,7 +189,7 @@ rm -f ~/.claude/skills/task-dependency-analyzer
 rm -f ~/.claude/skills/code-review
 rm -f ~/.claude/skills/sdd-router
 
-bash <(curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/install-kit.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh)
 ```
 
 ### Escape 2 · 1-on-1 con Juan

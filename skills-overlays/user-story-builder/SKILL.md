@@ -80,4 +80,4 @@ El `downstream: [story-to-plan]` declara este encadenamiento.
 
 - Original · `~/.claude/skills/user-story-builder/SKILL.md`
 - Repo fuente · `ittidigital/tech_emergentes_skills` · branch `feature/user-story-builder`
-- Pipeline greenfield · `shared_knowledge_iter_3/06a-pipeline.md`
+- Pipeline greenfield · `../../pipeline/pipeline-greenfield.md`

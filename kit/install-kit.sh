@@ -11,7 +11,7 @@
 #         solo agrega symlinks a ~/.claude/skills/
 #
 # Uso:
-#   curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/install-kit.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh | bash
 #
 # O local:
 #   bash install-kit.sh
@@ -22,7 +22,7 @@ set -euo pipefail
 # ─── Config ───────────────────────────────────────────────────────
 WORK_DIR="$HOME/.way-of-work-kit"
 GLOBAL_SKILLS="$HOME/.claude/skills"
-TOOLS_REPO="git@github.com:ittidigital/way-of-work-tools.git"
+TOOLS_REPO="git@github.com:juan-estrada-itti/way-of-work-tools.git"
 SKILLS_REPO="git@github.com:ittidigital/tech_emergentes_skills.git"
 GSTACK_REPO="https://github.com/garrytan/gstack.git"
 
@@ -70,7 +70,7 @@ if [ -d "$TOOLS_DIR/.git" ]; then
 else
     if ! git clone --quiet "$TOOLS_REPO" "$TOOLS_DIR" 2>/dev/null; then
         warn "Clone por SSH falló · intentando HTTPS"
-        git clone --quiet "https://github.com/ittidigital/way-of-work-tools.git" "$TOOLS_DIR"
+        git clone --quiet "https://github.com/juan-estrada-itti/way-of-work-tools.git" "$TOOLS_DIR"
     fi
     ok "Clonado"
 fi
@@ -182,7 +182,7 @@ echo "Próximos pasos:"
 echo "  1. Reiniciá Claude Code si estaba abierto:"
 echo "     pkill -f 'claude' 2>/dev/null ; claude"
 echo "  2. Verificá con:"
-echo "     curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/verify-kit.sh | bash"
+echo "     curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/verify-kit.sh | bash"
 echo "  3. Probá:"
 echo "     cd /tmp && mkdir -p test && cd test && claude"
 echo "     > /office-hours"

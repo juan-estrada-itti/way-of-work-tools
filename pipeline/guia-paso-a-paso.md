@@ -264,7 +264,7 @@ docs/
 
 Más `CLAUDE.md` en la raíz (convenciones del repo).
 
-Si te falta alguno · probablemente saltaste una fase · volvé al diagrama en `01-pipeline-greenfield.md`.
+Si te falta alguno · probablemente saltaste una fase · volvé al diagrama en `./pipeline-greenfield.md`.
 
 ---
 

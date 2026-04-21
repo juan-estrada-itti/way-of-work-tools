@@ -90,4 +90,4 @@ dependencies:
 
 - Original · `~/.claude/skills/code-review/SKILL.md`
 - Repo fuente · `ittidigital/tech_emergentes_skills` · branch `feature/code-review-skill`
-- Pipeline greenfield · `shared_knowledge_iter_3/06a-pipeline.md`
+- Pipeline greenfield · `../../pipeline/pipeline-greenfield.md`

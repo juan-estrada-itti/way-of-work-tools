@@ -87,4 +87,4 @@ dependencies:
 
 - Original · `~/.claude/skills/contract-define/SKILL.md`
 - Repo fuente · `ittidigital/tech_emergentes_skills` · branch `feature/contract-define`
-- Pipeline greenfield · `shared_knowledge_iter_3/06a-pipeline.md`
+- Pipeline greenfield · `../../pipeline/pipeline-greenfield.md`

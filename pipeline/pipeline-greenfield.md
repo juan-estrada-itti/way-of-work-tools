@@ -270,9 +270,9 @@ Namespaces permitidos (no inventar otros):
 ## Referencia cruzada
 
 - Glosario de términos · `03-glosario.md`
-- Cómo arrancás tu propia iniciativa greenfield · `06b-guia-paso-a-paso.md`
-- Proyecto ejemplo del taller · `06c-proyecto-ejemplo.md`
-- Slides para proyectar · `10-diapositivas-taller.md`
+- Cómo arrancás tu propia iniciativa greenfield · `./guia-paso-a-paso.md`
+- Proyecto ejemplo del taller · `../sesiones/sesion-1-onboarding/proyecto-ejemplo.md`
+- Slides para proyectar · `../sesiones/sesion-1-onboarding/slides.md`
 
 ---
 

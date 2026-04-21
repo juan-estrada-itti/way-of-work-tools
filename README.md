@@ -18,10 +18,10 @@ echo 'export ANTHROPIC_API_KEY="sk-ant-api03-TU-KEY"' >> ~/.zshrc
 source ~/.zshrc
 
 # 3 · Instalar las 10 skills del pipeline
-curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/install-kit.sh | bash
+curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh | bash
 ```
 
-**Verificar** · `curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/verify-kit.sh | bash`
+**Verificar** · `curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/verify-kit.sh | bash`
 
 Si te trabás · [FAQ](./kit/FAQ.md) o Slack `#way-of-work`.
 

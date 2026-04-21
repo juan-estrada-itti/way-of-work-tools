@@ -38,11 +38,11 @@ sobre el chat. Gracias por bancarla.
 
 1 · Instalá el kit vos también · 30 min · así podés resolver
 en vivo lo que te pregunten los demás:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 2 · Durante la semana · monitoreá Slack #way-of-work. Van a
 preguntar cómo instalar · las respuestas están en:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/FAQ.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/FAQ.md
 
    Si algo no está en FAQ · lo agregamos juntos · así crece.
 
@@ -71,10 +71,10 @@ le dio temple al grupo · los demás vieron que sí se puede.
 Dos cosas antes del próximo viernes (<FECHA_VIERNES>):
 
 1 · Instalá el kit · 10 min para vos · ya tenés todo andando:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
    O directo 1 comando:
-   curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/install-kit.sh | bash
+   curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh | bash
 
 2 · Pensá 1 idea greenfield · real o inventada · la traés el viernes.
 
@@ -99,7 +99,7 @@ Dos cosas antes del viernes (<FECHA_VIERNES>):
 
 1 · El kit · 30 min máximo · tu setup con Docker que me pasaste
 me sirvió de referencia para el install-kit.sh · mirá el hilo:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
    Si querés hacerlo por Docker (tu script original), avisame
    y hacemos una versión dedicada en tools/.
@@ -127,7 +127,7 @@ que el resto no hubiera tenido de otra forma.
 Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit instalado · 10 min:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
    Fijate especialmente en skills-overlays/ · son las v2 que
    agregan schema de dependencias al frontmatter · si te
@@ -157,7 +157,7 @@ da credibilidad al way of work ante el resto del equipo.
 Una sola cosa antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit instalado · 30 min:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 El viernes · relay de 8 parejas · tu pareja es Fede · fase RFC.
 Son 2 horas. Tu presencia como head importa tanto o más que la
@@ -187,7 +187,7 @@ no atarnos a Claude Code pelado.
 Antes del próximo viernes (<FECHA_VIERNES>):
 
 1 · Instalá el kit · 10 min · 1 comando:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
    Como usás Cursor, algunas skills se cargan distinto (Rules
    en vez de SKILL.md). El kit tiene una sección sobre eso ·
@@ -215,7 +215,7 @@ Gracias por venir al taller.
 Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit · 15 min:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 2 · 1 idea greenfield para el relay.
 
@@ -242,7 +242,7 @@ del grupo en mirada técnica.
 Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit · 15 min · directo:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 2 · 1 idea greenfield.
 
@@ -266,7 +266,7 @@ Gracias por venir. Con Canese tienen buena onda técnica.
 Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit · 15 min:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 2 · 1 idea greenfield.
 
@@ -291,7 +291,7 @@ Gracias por venir al taller.
 Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit instalado · 15 min:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 2 · Pensá 1 idea greenfield · para el relay del viernes.
 
@@ -316,7 +316,7 @@ Gracias por venir.
 Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit · 15 min:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 2 · 1 idea greenfield.
 
@@ -341,7 +341,7 @@ Gracias por venir al taller.
 Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit instalado · 15-30 min según experiencia terminal:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
    Si preferís hacerlo acompañada · agendame acá:
    <CALENDLY_LINK>
@@ -369,7 +369,7 @@ Gracias por venir.
 Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit · 15-30 min:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
    Si querés hacerlo juntos en 20 min:
    <CALENDLY_LINK>
@@ -401,7 +401,7 @@ Antes del viernes (<FECHA_VIERNES>):
 
 1 · Instalá el kit · 20 min · vos ya tenés ambiente de Claude ·
 te toca solo agregar las skills nuevas:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
    Si algo no anda · directo escribime · no pierdas tiempo.
 
@@ -430,7 +430,7 @@ Antes del viernes (<FECHA_VIERNES>) una sola cosa · dejar la
 compu lista. 2 opciones, elegís:
 
 Opción 1 · lo hacés sola · guía paso a paso en castellano:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 Opción 2 · 20 min de videollamada conmigo · lo hacemos juntos:
 <CALENDLY_LINK>
@@ -463,7 +463,7 @@ crucial tenerla en la mesa.
 
 Setup para el viernes (<FECHA_VIERNES>) · 30 min · misma compu
 que usaste hoy:
-https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 Si algo no anda · ping directo · lo resolvemos en 10 min · no
 quiero que pierdas tiempo en cuestiones técnicas.
@@ -501,7 +501,7 @@ dejar la compu lista para el ejercicio en vivo.
 
 Opción 1 · lo hacés solo · 30-40 min
    Guía paso a paso (tiene comandos copy-paste):
-   https://github.com/ittidigital/way-of-work-tools/blob/main/kit/INSTALL.md
+   https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
    Si te trabás · Slack #way-of-work · Alejo y yo respondemos.
 
@@ -536,7 +536,7 @@ Taller 1 cerrado · tengo buenos aprendizajes que compartiré
 la semana que viene.
 
 Material completo + kit de instalación en:
-https://github.com/ittidigital/way-of-work-tools
+https://github.com/juan-estrada-itti/way-of-work-tools
 
 Antes del próximo viernes <FECHA_VIERNES>, 2 tareas async:
 

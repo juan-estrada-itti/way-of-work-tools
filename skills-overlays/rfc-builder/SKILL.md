@@ -66,4 +66,4 @@ dependencies:
 
 - Original · `~/.claude/skills/rfc-builder/SKILL.md`
 - Repo fuente · `ittidigital/tech_emergentes_skills` · branch `main`
-- Pipeline greenfield · `shared_knowledge_iter_3/06a-pipeline.md`
+- Pipeline greenfield · `../../pipeline/pipeline-greenfield.md`

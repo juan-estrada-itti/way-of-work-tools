@@ -8,7 +8,7 @@
 #   · Imprime OK o FAIL por cada check
 #
 # Uso:
-#   curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/verify-kit.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/verify-kit.sh | bash
 # ──────────────────────────────────────────────────────────────────
 
 set -u
