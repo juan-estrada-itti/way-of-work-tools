@@ -90,28 +90,60 @@ Mandale DM a Juan · revisa que tu email `@itti.digital` esté agregado al works
 
 Tu clave SSH no está agregada a GitHub, o no está cargada en el agent.
 
-**Fix rápido · forzar HTTPS**
+**Fix completo · agregar SSH key**
 ```bash
-# Configurar git para usar HTTPS siempre que intente SSH:
-git config --global url."https://github.com/".insteadOf git@github.com:
+# 1 · Generá tu SSH key si no tenés:
+ssh-keygen -t ed25519 -C "tu-email@itti.digital"
+# Enter · Enter · Enter (sin password)
 
+# 2 · Copiala:
+pbcopy < ~/.ssh/id_ed25519.pub   # macOS
+cat ~/.ssh/id_ed25519.pub         # Linux (copia a mano)
+
+# 3 · Pegala en GitHub:
+#    https://github.com/settings/ssh/new
+#    Ponele un nombre (ej: "macbook-itti") · Add SSH key
+
+# 4 · Testeala:
+ssh -T git@github.com
+# Esperás: "Hi <tu-usuario>! You've successfully authenticated..."
+```
+
+**Fix rápido alternativo · forzar HTTPS en vez de SSH**
+Solo sirve para repos públicos · si el repo es privado, igualmente necesitás PAT.
+```bash
+git config --global url."https://github.com/".insteadOf git@github.com:
 # Después correr de nuevo:
 bash ~/.way-of-work-kit/way-of-work-tools/kit/install-kit.sh
 ```
 
-**Fix completo · agregar SSH key**
-```bash
-# Generá tu SSH key si no tenés:
-ssh-keygen -t ed25519 -C "tu-email@itti.digital"
+---
 
-# Copiala:
-pbcopy < ~/.ssh/id_ed25519.pub   # macOS
-cat ~/.ssh/id_ed25519.pub         # Linux (copia manual)
+## 4.5 · `git clone` falla con `Repository not found` en ittidigital
 
-# Pegala en https://github.com/settings/ssh/new
-# Testeala:
-ssh -T git@github.com
-```
+Tu SSH funciona · pero **no sos colaborador** del org `ittidigital` · no podés acceder al repo privado `tech_emergentes_skills`.
+
+**Fix**
+
+1. Mandale DM a Juan con tu **username de GitHub**
+   (para verlo · https://github.com/settings/profile)
+
+2. Juan te agrega al team `ittidigital/tech-emergentes`
+   (toma 30 segundos)
+
+3. Confirmá acceso:
+   ```bash
+   git clone git@github.com:ittidigital/tech_emergentes_skills.git /tmp/test-clone
+   # Si clona · estás dentro · borrá /tmp/test-clone
+   rm -rf /tmp/test-clone
+   ```
+
+4. Volvé a correr el install:
+   ```bash
+   bash <(curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh)
+   ```
+
+**Si quedás con 4/10 skills** · tenés las 4 públicas (del mirror `juan-estrada-itti/way-of-work-tools` + `office-hours` de gstack). Las 6 privadas las sumás después de que Juan te dé acceso.
 
 ---
 
