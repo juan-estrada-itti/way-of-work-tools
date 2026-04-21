@@ -28,41 +28,72 @@ Listas para usar en tus iniciativas reales.
 
 ## Paso 1 · Instalar Claude Code (5 min)
 
-### macOS
+**Pre-requisito** · tener Node.js instalado (versión 18+).
+Verificalo con:
+
 ```bash
-brew install anthropics/claude/claude
+node --version
+```
+
+Si no lo tenés · instalalo primero:
+- **macOS** · `brew install node` (o bajá de `https://nodejs.org`)
+- **Linux / WSL** · `curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - && sudo apt-get install -y nodejs`
+- **Windows** · bajá de `https://nodejs.org` · asegurate de incluir npm
+
+### Instalación de Claude Code · misma para todos los sistemas
+
+```bash
+npm install -g @anthropic-ai/claude-code
 claude --version
 ```
 
-Si `brew` no está · instalá Homebrew primero (`https://brew.sh`).
-
-### Linux / WSL
+Si da error de permisos en macOS/Linux, usá:
 ```bash
-curl -fsSL https://claude.ai/install.sh | bash
-claude --version
+sudo npm install -g @anthropic-ai/claude-code
 ```
 
 ### Windows sin WSL
-Instalá **WSL 2** con Ubuntu 22.04 · después seguí los pasos de Linux.
-Si no querés WSL, podés usar Cursor · hablame y te paso alternativa.
+Claude Code funciona nativamente en Windows con Node · no necesitás WSL obligatoriamente.
+Si preferís WSL (recomendado si vas a usar `git` + `bash`), instalá WSL 2 con Ubuntu 22.04 y seguí los mismos pasos.
 
 ---
 
-## Paso 2 · Autenticación (5 min)
+## Paso 2 · Generar tu API Key (5 min)
 
-Al correr `claude` por primera vez te pide login.
+Usamos API keys del workspace compartido del equipo · **no** OAuth personal.
 
-**Opción A · Anthropic Console (recomendada)**
-1. Abrí [console.anthropic.com](https://console.anthropic.com)
-2. Login con tu cuenta itti (Google SSO)
-3. Volvé a la terminal · Claude Code detecta la sesión
+### Paso a paso
 
-**Opción B · API Key**
-Si preferís API key directa:
+1. Abrí en tu navegador:
+   **https://platform.claude.com/settings/workspaces/default/keys**
+
+2. Login con tu cuenta itti (Google SSO · `@itti.digital`)
+
+3. Clickeá **`+ Create key`** (arriba a la derecha)
+
+4. Nombrala siguiendo la convención del equipo:
+   - Formato · `{nombre}-{apellido}-itti` o `{nombre}-key`
+   - Ejemplos que ya existen · `leo-villa-itti` · `joan-aliberti-key` · `avivas-key`
+
+5. Copiá la key completa (formato `sk-ant-api03-...`) · **se muestra una sola vez**
+
+6. Pegala en tu terminal en el `~/.zshrc` (macOS/Linux · zsh) o `~/.bashrc` (bash):
+
 ```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
+echo 'export ANTHROPIC_API_KEY="sk-ant-api03-TU-KEY-COMPLETA"' >> ~/.zshrc
+source ~/.zshrc
 ```
-Si necesitás una key temporal del equipo, pedila a Juan.
+
+7. Verificá:
+```bash
+echo $ANTHROPIC_API_KEY
+# Debería imprimir tu key · si no imprime nada, abrí terminal nueva
+```
+
+### ⚠️ Importante
+- La key queda **solo en tu compu** · no se commitea a ningún repo
+- Si la perdés · generás una nueva en el mismo panel y revocás la vieja
+- Los costos van al workspace del equipo · usá con criterio
 
 ---
 
@@ -140,8 +171,11 @@ Dentro de Claude Code:
 
 | Síntoma | Solución |
 |---|---|
-| `claude: command not found` | Abrí terminal nueva · si persiste reinstalá |
-| Auth falla | Usá API key (Paso 2 Opción B) |
+| `npm: command not found` | Instalá Node.js primero · `https://nodejs.org` |
+| `EACCES: permission denied` al instalar Claude | `sudo npm install -g @anthropic-ai/claude-code` o usá `nvm` para manejar permisos |
+| `claude: command not found` después de instalar | Abrí terminal nueva · verificá que `npm root -g` está en tu PATH |
+| `$ANTHROPIC_API_KEY` vacío | Reabrí la terminal o corré `source ~/.zshrc` |
+| API key no funciona | Verificá que copiaste completa · generá una nueva en platform.claude.com |
 | Skills no aparecen con `/` | Reiniciá Claude Code completo · `pkill -f claude && claude` |
 | `install-kit.sh` falla por SSH | Usá HTTPS: `git config --global url."https://github.com/".insteadOf git@github.com:` |
 | Corporativo bloquea GitHub | Usá datos móviles · o pedime la config Netskope |

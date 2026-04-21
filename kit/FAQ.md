@@ -8,18 +8,24 @@ Si tu problema no está acá · Slack `#way-of-work` · respondo rápido.
 
 ## 1 · `claude: command not found`
 
-Claude Code no está en el PATH.
+Claude Code no está en el PATH · o no se instaló.
 
 **Fix**
 ```bash
 # Cerrá la terminal y abrí una nueva (a veces alcanza)
-# Si persiste:
-which claude   # debería devolver /opt/homebrew/bin/claude o similar
+# Si persiste, verificá dónde está instalado:
+which claude
+npm list -g @anthropic-ai/claude-code
 
-# Si no devuelve nada:
-brew reinstall anthropics/claude/claude  # macOS
-# o
-curl -fsSL https://claude.ai/install.sh | bash  # Linux
+# Si no aparece · reinstalá:
+npm install -g @anthropic-ai/claude-code
+
+# Si da error de permisos:
+sudo npm install -g @anthropic-ai/claude-code
+
+# Verificá PATH · agregar si falta:
+echo "export PATH=\"\$(npm config get prefix)/bin:\$PATH\"" >> ~/.zshrc
+source ~/.zshrc
 ```
 
 ---
@@ -40,27 +46,43 @@ claude
 
 ---
 
-## 3 · Auth falla · *"unable to authenticate"*
+## 3 · Auth falla · *"unable to authenticate"* o *"API key invalid"*
 
-Tu sesión OAuth expiró o no se guardó.
+La API key no está configurada, está mal copiada, o fue revocada.
 
-**Fix opción A · reautenticar**
+**Fix 1 · verificar que la variable existe**
 ```bash
-# Dentro de Claude Code:
-/login
+echo $ANTHROPIC_API_KEY
+# Debería imprimir algo que empieza con sk-ant-api03-...
+# Si imprime vacío · la variable no está cargada
 ```
 
-**Fix opción B · usar API key**
+**Fix 2 · recargar la shell**
 ```bash
-# En tu ~/.zshrc o ~/.bashrc:
-export ANTHROPIC_API_KEY="sk-ant-..."
+source ~/.zshrc   # macOS/Linux con zsh
+# o
+source ~/.bashrc  # Linux con bash
 
-# Después:
-source ~/.zshrc   # o .bashrc
-claude
+# O simplemente cerrá y abrí terminal nueva
 ```
 
-Si necesitás una key temporal del equipo, pedila a Juan por DM.
+**Fix 3 · generar una key nueva**
+1. Abrí `https://platform.claude.com/settings/workspaces/default/keys`
+2. Login con `@itti.digital` (Google SSO)
+3. `+ Create key` · nombrala `{tu-nombre}-itti` siguiendo la convención
+4. Copiala completa (formato `sk-ant-api03-...`)
+5. Pegala al final del archivo:
+   ```bash
+   # Abrí el archivo:
+   nano ~/.zshrc
+   # Pegá al final (reemplazando si ya había una vieja):
+   export ANTHROPIC_API_KEY="sk-ant-api03-TU-KEY-NUEVA"
+   # Guardá con Ctrl+O · Enter · Ctrl+X
+   source ~/.zshrc
+   ```
+
+**Fix 4 · si no podés acceder a platform.claude.com**
+Mandale DM a Juan · revisa que tu email `@itti.digital` esté agregado al workspace.
 
 ---
 

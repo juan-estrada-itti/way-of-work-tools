@@ -4,16 +4,18 @@
 
 ---
 
-## Arranque rápido · 3 comandos
+## Arranque rápido · 3 pasos
 
 ```bash
-# 1 · Instalar Claude Code (si todavía no lo tenés)
-brew install anthropics/claude/claude   # macOS
-# o
-curl -fsSL https://claude.ai/install.sh | bash   # Linux / WSL
+# 1 · Instalar Claude Code (requiere Node.js 18+)
+npm install -g @anthropic-ai/claude-code
+claude --version
 
-# 2 · Autenticar
-claude   # abre flujo OAuth la primera vez
+# 2 · Configurar API key del workspace itti
+# Generá tu key en: https://platform.claude.com/settings/workspaces/default/keys
+# Nombrala {tu-nombre}-itti · copiala · y pegala:
+echo 'export ANTHROPIC_API_KEY="sk-ant-api03-TU-KEY"' >> ~/.zshrc
+source ~/.zshrc
 
 # 3 · Instalar las 10 skills del pipeline
 curl -fsSL https://raw.githubusercontent.com/ittidigital/way-of-work-tools/main/kit/install-kit.sh | bash
