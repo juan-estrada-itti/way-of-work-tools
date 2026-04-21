@@ -1,0 +1,36 @@
+{
+  "name": "taller-participante",
+  "description": "Guía para los participantes del Taller 1 Relay SDD · te dice qué hacer en tu fase asignada (1-8), qué skill correr, dónde leer el input, dónde pegar el output, y cómo armar tu frase para el show & tell.",
+  "version": "1.0.0",
+  "tags": [
+    "taller",
+    "participante",
+    "relay",
+    "sdd",
+    "way-of-work",
+    "pareja"
+  ],
+  "triggers": [
+    "soy pareja",
+    "me tocó fase",
+    "qué hago en el taller",
+    "taller sdd",
+    "ayuda en el relay",
+    "mi fase del taller",
+    "qué skill uso ahora",
+    "show and tell",
+    "show & tell",
+    "input del taller",
+    "taller-participante",
+    "participo en el taller"
+  ],
+  "capabilities": [
+    "Identificar qué pareja sos del Taller 1 (1-8) y darte la guía específica de tu fase",
+    "Proveer comandos exactos de la skill que te toca correr (/create-prd, /rfc-builder, /contract-define, /user-story-builder, /task-dependency-analyzer, /code-review)",
+    "Darte la plantilla de output a pegar en el Google Doc compartido",
+    "Ayudarte a armar la frase de 'lo que más nos sorprendió' para el show & tell",
+    "Decirte dónde leer el input del equipo anterior y dónde pegar tu output",
+    "Plan B si te trabás (chat con Alejo, plantilla backup, Cursor/Copilot como fallback)",
+    "Diferenciar rol de driver (con herramientas) vs navigator (con preguntas) en la pareja"
+  ]
+}

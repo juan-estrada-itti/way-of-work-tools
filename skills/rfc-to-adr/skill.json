@@ -1,0 +1,38 @@
+{
+  "name": "rfc-to-adr",
+  "description": "Toma un RFC como input y extrae las decisiones arquitectónicas implícitas, generando un ADR por cada una en formato Nygard (Contexto · Decisión · Consecuencias · Status). Identifica cuáles decisiones necesitan PoC/spike antes de commitearse.",
+  "version": "1.0.0",
+  "tags": [
+    "adr",
+    "rfc",
+    "architecture",
+    "decisions",
+    "nygard",
+    "sdd",
+    "way-of-work",
+    "governance"
+  ],
+  "triggers": [
+    "rfc a adr",
+    "crear adr",
+    "rfc-to-adr",
+    "partir rfc",
+    "adr desde rfc",
+    "architecture decisions",
+    "decisiones de arquitectura",
+    "decisiones arquitectura",
+    "nygard adr",
+    "extraer adrs",
+    "adr generator"
+  ],
+  "capabilities": [
+    "Leer un RFC técnico y extraer las decisiones arquitectónicas implícitas",
+    "Generar un ADR por decisión en formato Nygard (Contexto · Decisión considerada · Decisión tomada · Consecuencias · Status)",
+    "Identificar qué decisiones requieren PoC/spike antes de implementar (con criterio de éxito medible)",
+    "Clasificar decisiones en high-stakes / low-stakes / inciertas",
+    "Generar ADR-INDEX.md con tabla resumen + PoCs pendientes + resumen ejecutivo",
+    "Cross-referenciar ADRs con RFC fuente, PRD de negocio y ADRs relacionados",
+    "Validar que dos ADRs no contradicen entre sí (crea ADR superseder si pasa)",
+    "Respetar convenciones ya documentadas en CLAUDE.md (no duplicarlas como ADRs)"
+  ]
+}

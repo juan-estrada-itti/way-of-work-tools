@@ -1,0 +1,411 @@
+# Pipeline SDD · Manifiesto del grafo de dependencias
+# ─────────────────────────────────────────────────────
+# Este archivo es la FUENTE DE VERDAD del grafo de skills.
+# Lo consume /sdd-router para encadenar automáticamente.
+#
+# Cada skill declara:
+#   - pipeline: phase, applies_to, position
+#   - dependencies: consumes, produces, upstream, downstream
+#
+# Cuando las overlays v2 se PR'een al repo oficial,
+# este manifest se puede derivar automáticamente de los
+# SKILL.md individuales con un script.
+#
+# Última actualización: 2026-04-21 · Juan Estrada
+
+version: 1.0.0
+pipeline_name: sdd-greenfield-plus-brownfield
+
+# ────────────────────────────────────────────────
+# Skills del pipeline · ordenadas por fase greenfield
+# ────────────────────────────────────────────────
+
+skills:
+
+  # ─── Discovery greenfield ──────────────────────
+  - name: office-hours
+    source: external (garrytan/gstack)
+    version: "2.0.0"
+    pipeline:
+      phase: discovery
+      applies_to: [greenfield]
+      position_greenfield: 1
+    dependencies:
+      consumes:
+        - artifact: idea-cruda
+          produced_by: null
+          required: true
+      produces:
+        - artifact: discovery.md
+          path_hint: docs/00-discovery/discovery.md
+      upstream: []
+      downstream: [create-prd]
+
+  # ─── Discovery brownfield ──────────────────────
+  - name: journey-creator
+    source: agents-sdd-pipeline
+    pipeline:
+      phase: brownfield-journey
+      applies_to: [brownfield]
+      position_brownfield: 1
+    dependencies:
+      consumes:
+        - artifact: existing-codebase
+          required: true
+      produces:
+        - artifact: journeys.md
+          path_hint: docs/00-brownfield-discovery/journeys.md
+      upstream: []
+      downstream: [ddd-workshop-facilitator]
+
+  - name: ddd-workshop-facilitator
+    source: agents-sdd-pipeline
+    pipeline:
+      phase: brownfield-ddd
+      applies_to: [brownfield]
+      position_brownfield: 2
+    dependencies:
+      consumes:
+        - artifact: journeys.md
+          produced_by: journey-creator
+          required: true
+        - artifact: existing-codebase
+          required: true
+      produces:
+        - artifact: bounded-contexts.md
+          path_hint: docs/00-brownfield-discovery/bounded-contexts.md
+        - artifact: domain-storytelling.md
+          path_hint: docs/00-brownfield-discovery/domain-storytelling.md
+      upstream: [journey-creator]
+      downstream: [journey-ddd-evaluator]
+
+  - name: journey-ddd-evaluator
+    source: agents-sdd-pipeline
+    pipeline:
+      phase: brownfield-assessment
+      applies_to: [brownfield]
+      position_brownfield: 3
+    dependencies:
+      consumes:
+        - artifact: bounded-contexts.md
+          produced_by: ddd-workshop-facilitator
+          required: true
+      produces:
+        - artifact: assessment.md
+          path_hint: docs/00-brownfield-discovery/assessment.md
+      upstream: [ddd-workshop-facilitator]
+      downstream: [create-prd]
+
+  # ─── PRD ───────────────────────────────────────
+  - name: create-prd
+    source: tech_emergentes_skills (main)
+    version: "2.1.0"
+    overlay: skills-draft/create-prd-v2/SKILL.md
+    pipeline:
+      phase: prd
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 2
+      position_brownfield: 5
+    dependencies:
+      consumes:
+        - artifact: discovery.md
+          produced_by: office-hours
+          required: true
+        - artifact: assessment.md
+          produced_by: journey-ddd-evaluator
+          required: false
+          note: "solo en brownfield"
+      produces:
+        - artifact: prd.md
+          path_hint: docs/01-prd/prd.md
+      upstream: [office-hours, journey-ddd-evaluator]
+      downstream: [rfc-builder, prd-slice]
+
+  # ─── RFC ───────────────────────────────────────
+  - name: rfc-builder
+    source: tech_emergentes_skills (main)
+    version: "2.0.0"
+    overlay: skills-draft/rfc-builder-v2/SKILL.md
+    pipeline:
+      phase: rfc
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 3
+      position_brownfield: 6
+    dependencies:
+      consumes:
+        - artifact: prd.md
+          produced_by: create-prd
+          required: true
+        - artifact: CLAUDE.md
+          required: false
+      produces:
+        - artifact: rfc.md
+          path_hint: docs/02-rfc/rfc.md
+      upstream: [create-prd]
+      downstream: [rfc-to-adr, contract-define]
+
+  # ─── ADRs ──────────────────────────────────────
+  - name: rfc-to-adr
+    source: local draft
+    version: "1.0.0"
+    overlay: skills-draft/rfc-to-adr/SKILL.md
+    pipeline:
+      phase: adrs
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 4
+      position_brownfield: 7
+    dependencies:
+      consumes:
+        - artifact: rfc.md
+          produced_by: rfc-builder
+          required: true
+      produces:
+        - artifact: ADR-INDEX.md
+          path_hint: docs/04-adrs/ADR-INDEX.md
+        - artifact: ADR-NNN-*.md
+          path_hint: docs/04-adrs/
+          cardinality: 1..8
+      upstream: [rfc-builder]
+      downstream: [contract-define]
+    trigger_rule: "activar si RFC tiene >5 decisiones arquitectónicas · V4 del way of work"
+
+  # ─── Contratos ─────────────────────────────────
+  - name: contract-define
+    source: tech_emergentes_skills (branch feature/contract-define)
+    version: "2.0.0"
+    overlay: skills-draft/contract-define-v2/SKILL.md
+    pipeline:
+      phase: contracts
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 5
+      position_brownfield: 8
+    dependencies:
+      consumes:
+        - artifact: rfc.md
+          produced_by: rfc-builder
+          required: true
+        - artifact: prd.md
+          produced_by: create-prd
+          required: true
+        - artifact: docs/04-adrs/ADR-*.md
+          produced_by: rfc-to-adr
+          required: false
+      produces:
+        - artifact: api-contract.md
+          path_hint: docs/03-contracts/api-contract.md
+        - artifact: data-model.md
+          path_hint: docs/03-contracts/data-model.md
+        - artifact: events.md
+          path_hint: docs/03-contracts/events.md
+          cardinality: 0..1
+        - artifact: flows.md
+          path_hint: docs/03-contracts/flows.md
+          cardinality: 0..1
+      upstream: [rfc-builder, rfc-to-adr]
+      downstream: [cross-validate, user-story-builder]
+
+  # ─── Historias ─────────────────────────────────
+  - name: user-story-builder
+    source: tech_emergentes_skills (branch feature/user-story-builder)
+    version: "2.0.0"
+    overlay: skills-draft/user-story-builder-v2/SKILL.md
+    pipeline:
+      phase: stories
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 6
+      position_brownfield: 9
+    dependencies:
+      consumes:
+        - artifact: api-contract.md
+          produced_by: contract-define
+          required: true
+        - artifact: prd.md
+          produced_by: create-prd
+          required: true
+      produces:
+        - artifact: stories.md
+          path_hint: docs/05-stories/stories.md
+      upstream: [contract-define]
+      downstream: [story-to-plan]
+
+  # ─── Plan por historia (NUEVA) ─────────────────
+  - name: story-to-plan
+    source: local draft
+    version: "1.0.0"
+    overlay: skills-draft/story-to-plan/SKILL.md
+    pipeline:
+      phase: story-planning
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 6.5
+      position_brownfield: 9.5
+    dependencies:
+      consumes:
+        - artifact: stories.md
+          produced_by: user-story-builder
+          required: true
+          note: "el usuario selecciona UNA historia del archivo"
+        - artifact: docs/04-adrs/ADR-*.md
+          produced_by: rfc-to-adr
+          required: true
+        - artifact: api-contract.md
+          produced_by: contract-define
+          required: true
+        - artifact: CLAUDE.md
+          required: true
+      produces:
+        - artifact: plan-H<N>.md
+          path_hint: docs/06-plans/plan-H<N>.md
+          cardinality: 1..1
+      upstream: [user-story-builder]
+      downstream: [task-dependency-analyzer]
+
+  # ─── DAG macro ─────────────────────────────────
+  - name: task-dependency-analyzer
+    source: tech_emergentes_skills (branch feature/task-dependency-analyzer)
+    version: "2.0.0"
+    overlay: skills-draft/task-dependency-analyzer-v2/SKILL.md
+    pipeline:
+      phase: task-dag
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 7
+      position_brownfield: 10
+    dependencies:
+      consumes:
+        - artifact: plan-H<N>.md
+          produced_by: story-to-plan
+          required: true
+          cardinality: 1..N
+      produces:
+        - artifact: dag.md
+          path_hint: docs/07-dag/dag.md
+        - artifact: tasks.json
+          path_hint: docs/07-dag/tasks.json
+          note: "Agents Kanban format"
+      upstream: [story-to-plan]
+      downstream: [code-execution]
+
+  # ─── Código (no es skill, es ejecución) ────────
+  - name: code-execution
+    source: Claude Code · Cursor · Copilot
+    pipeline:
+      phase: code
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 8
+      position_brownfield: 11
+    dependencies:
+      consumes:
+        - artifact: plan-H<N>.md
+          produced_by: story-to-plan
+          required: true
+        - artifact: tasks.json
+          produced_by: task-dependency-analyzer
+          required: true
+        - artifact: CLAUDE.md
+          required: true
+      produces:
+        - artifact: commits
+        - artifact: PR
+      upstream: [task-dependency-analyzer]
+      downstream: [code-review]
+
+  # ─── Review ────────────────────────────────────
+  - name: code-review
+    source: tech_emergentes_skills (branch feature/code-review-skill)
+    version: "2.0.0"
+    overlay: skills-draft/code-review-v2/SKILL.md
+    pipeline:
+      phase: review
+      applies_to: [greenfield, brownfield]
+      position_greenfield: 9
+      position_brownfield: 12
+    dependencies:
+      consumes:
+        - artifact: PR-diff
+          required: true
+        - artifact: CLAUDE.md
+          required: true
+        - artifact: prd.md
+          produced_by: create-prd
+          required: false
+        - artifact: rfc.md
+          produced_by: rfc-builder
+          required: false
+        - artifact: api-contract.md
+          produced_by: contract-define
+          required: false
+        - artifact: docs/04-adrs/ADR-*.md
+          produced_by: rfc-to-adr
+          required: false
+        - artifact: plan-H<N>.md
+          produced_by: story-to-plan
+          required: false
+      produces:
+        - artifact: review.md
+          path_hint: docs/08-reviews/review-PR<N>.md
+      upstream: [code-execution]
+      downstream: [spec-library-update]
+
+# ────────────────────────────────────────────────
+# Gates humanos · los 6 del pipeline
+# ────────────────────────────────────────────────
+
+gates:
+  - id: gate-1-prd
+    after_phase: prd
+    required_role: Product lead
+    validates: [scope, business-intent]
+
+  - id: gate-2-rfc-adrs
+    after_phase: adrs
+    required_role: Architect
+    validates: [tech-decisions, adr-acceptance]
+
+  - id: gate-3-contract
+    after_phase: contracts
+    required_role: FE + BE leads
+    validates: [api-shape, consumer-agreement]
+
+  - id: gate-4-dag
+    after_phase: task-dag
+    required_role: Tech lead
+    validates: [dependency-analysis, parallelization-plan]
+
+  - id: gate-5-review
+    after_phase: review
+    required_role: Reviewer
+    validates: [code-vs-specs, merge-readiness]
+
+  - id: gate-6-post-merge
+    after_phase: merge
+    required_role: Team
+    validates: [smoke-tests, e2e-green]
+
+# ────────────────────────────────────────────────
+# Reglas duras del pipeline · V1-V4 del way of work
+# ────────────────────────────────────────────────
+
+rules:
+  V1:
+    name: "PRD técnico no reduce PRD negocio"
+    applies_to_phase: [rfc, contracts]
+    enforcement: "el técnico puede agregar rigor · nunca quitar alcance"
+
+  V2:
+    name: "Validar contra PRD de negocio hasta el RFC"
+    applies_to_phase: [prd, rfc]
+    enforcement: "cada paso se valida vs PRD · después el RFC es fuente"
+
+  V3:
+    name: "CLAUDE.md obligatorio antes de codear"
+    applies_to_phase: [code]
+    enforcement: "sin CLAUDE.md no arranca code-execution"
+
+  V4:
+    name: "RFC con >5 decisiones → partir en ADRs"
+    applies_to_phase: [rfc, contracts]
+    enforcement: "rfc-to-adr se activa automáticamente · obliga antes de contract-define"
+
+  V5: # NUEVO en iter 3
+    name: "Plan micro antes de DAG macro"
+    applies_to_phase: [story-planning, task-dag]
+    enforcement: "story-to-plan debe producir plan-Hi.md antes de task-dependency-analyzer"

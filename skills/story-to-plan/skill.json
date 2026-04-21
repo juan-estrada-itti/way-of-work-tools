@@ -1,0 +1,47 @@
+{
+  "name": "story-to-plan",
+  "description": "Toma UNA historia INVEST y genera el plan ejecutable vertical · carga ADRs + contrato + CLAUDE.md como contexto · descompone en subtasks FE+BE+DB+tests · declara consume/produce estructurados para que task-dependency-analyzer arme el DAG sin ambigüedad.",
+  "version": "1.0.0",
+  "tags": [
+    "story",
+    "plan",
+    "subtasks",
+    "vertical-slice",
+    "sdd",
+    "way-of-work",
+    "pipeline",
+    "governance"
+  ],
+  "triggers": [
+    "story to plan",
+    "plan de historia",
+    "historia a subtasks",
+    "vertical slice plan",
+    "plan ejecutable",
+    "story-to-plan",
+    "plan-historia",
+    "subtasks verticales",
+    "plan para claude",
+    "planear historia"
+  ],
+  "capabilities": [
+    "Leer 1 historia INVEST + sus criterios de aceptación",
+    "Cargar automáticamente ADRs, api-contract.md, CLAUDE.md, data-model.md como contexto de governance",
+    "Descomponer la historia en slice vertical (DB + BE + FE + Tests) con subtasks concretos",
+    "Declarar consume/produce estructurado por subtask con namespaces fijos (schema, endpoint, contract, file, adr, interface, test, event, env)",
+    "Generar archivos a tocar, patterns del CLAUDE.md a seguir, validaciones medibles por subtask",
+    "Producir plan-H<N>.md con formato estándar parseado por task-dependency-analyzer",
+    "Validar completitud (todo subtask tiene consume/produce/archivos/validación)",
+    "Preparar el handoff a /task-dependency-analyzer que genera DAG + JSON Agents Kanban"
+  ],
+  "pipeline": {
+    "phase": "story-planning",
+    "applies_to": ["greenfield", "brownfield"],
+    "position_greenfield": 6.5,
+    "position_brownfield": 9.5
+  },
+  "dependencies": {
+    "upstream": ["user-story-builder"],
+    "downstream": ["task-dependency-analyzer"]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "skill": "lessons-harvester",
+  "version": "1.0.0",
+  "description": "Test cases para validar que lessons-harvester captura lessons a partir de carpetas de specs reales con retrospectivas manuales ya escritas.",
+  "test_cases": [
+    {
+      "id": "tc-01-ulab-smoke-test",
+      "name": "Smoke test contra ulab iteración 3 (18 lessons manuales)",
+      "description": "Correr el harvester sobre la carpeta real de specs de ulab sin leer la retrospectiva manual. Comparar qué fracción de las 18 lessons manuales se detectan automáticamente.",
+      "input": {
+        "specs_folder": "/Users/juan.estrada/projects/sdd/ulab/specs/iteration-3/",
+        "iteration_type": "brownfield",
+        "case_name": "ulab iter 3",
+        "previous_lessons": null,
+        "confluence_space": "VS",
+        "confluence_page_id": null,
+        "jira_epic": "ULAB-1185",
+        "validator": "Juan Diego"
+      },
+      "expected_with_skill": {
+        "minimum_lessons_detected": 14,
+        "must_include_categories": [
+          "Del proceso SDD aplicado",
+          "Del análisis técnico",
+          "Del pipeline de review"
+        ],
+        "must_include_lesson_titles_similar_to": [
+          "PRD técnico no reduce scope del PRD negocio",
+          "Comentarios resueltos también son input",
+          "MCP overhead antes de adoptar",
+          "Cross-validate antes de implementar",
+          "Confluence es base, no archivos locales"
+        ],
+        "must_not_include": [
+          "lesson_without_evidence",
+          "opinion_sin_trigger",
+          "credentials_in_output"
+        ]
+      },
+      "expected_baseline_without_skill": {
+        "likely_issues": [
+          "sin captura automática → retro manual 4-6h",
+          "lessons inconsistentes entre equipos",
+          "equipo siguiente repite errores sin saberlo"
+        ]
+      },
+      "evaluation_criteria": "pass si detecta ≥14 de las 18 lessons manuales Y todas las detectadas tienen evidencia trazable"
+    },
+    {
+      "id": "tc-02-academy-smoke-test",
+      "name": "Smoke test contra academy AppSec Q1 2026 (21 lessons manuales)",
+      "description": "Igual al anterior pero con el caso academy — ejecución con agentes autónomos, más ejecución + menos proceso puro.",
+      "input": {
+        "specs_folder": "/Users/juan.estrada/projects/agents/docs/case-appsec-q1-2026/",
+        "iteration_type": "brownfield",
+        "case_name": "academy AppSec Q1 2026",
+        "previous_lessons": null,
+        "jira_epic": "ITTIAC-718",
+        "validator": "Juan Estrada"
+      },
+      "expected_with_skill": {
+        "minimum_lessons_detected": 16,
+        "must_include_categories": [
+          "Del proceso SDD aplicado a seguridad",
+          "Del análisis técnico",
+          "De la ejecución con Agents Kanban"
+        ],
+        "must_include_lesson_titles_similar_to": [
+          "pipeline SDD funciona para vulns no solo features",
+          "Discovery verifica claims del código",
+          "Dependencias del DAG deben propagar a Jira",
+          "CLAUDE.md obligatorio antes de agentes",
+          "PRs encadenan por dependencias"
+        ],
+        "must_not_include": [
+          "lessons_duplicadas_del_caso_anterior",
+          "invented_without_commit_or_comment_evidence"
+        ]
+      },
+      "expected_baseline_without_skill": {
+        "likely_issues": [
+          "21 lessons tomaron varias horas manualmente",
+          "conceptos ejecución + agentes requieren contexto técnico denso",
+          "sin harvester, equipo con agentes tiene que re-aprender cada iteración"
+        ]
+      },
+      "evaluation_criteria": "pass si detecta ≥16 de 21 lessons manuales Y distingue correctamente las categorías proceso / técnico / ejecución / integración"
+    },
+    {
+      "id": "tc-03-append-mode",
+      "name": "Append mode · respetar lessons previas y continuar numeración",
+      "description": "Correr el harvester cuando ya existe lessons.md con N lessons. Verificar que la nueva iteración continúa con L-(N+1) y no sobrescribe lo anterior.",
+      "input": {
+        "specs_folder": "test-fixtures/fake-iter-2/",
+        "iteration_type": "brownfield",
+        "case_name": "fake case iter 2",
+        "previous_lessons": "test-fixtures/fake-iter-2/lessons.md (contiene 5 lessons L-001 a L-005)",
+        "validator": "test-user"
+      },
+      "expected_with_skill": {
+        "numbering_starts_at": "L-006",
+        "previous_lessons_preserved": true,
+        "new_section_added": true,
+        "previous_section_not_modified": true
+      },
+      "evaluation_criteria": "pass si el archivo final tiene las 5 lessons previas sin cambios + las nuevas con numeración desde L-006"
+    },
+    {
+      "id": "tc-04-human-validation-required",
+      "name": "No persistir sin validación humana",
+      "description": "El harvester genera candidates, pero si el humano no los confirma, no deben quedar en lessons.md.",
+      "input": {
+        "specs_folder": "test-fixtures/fake-iter-3/",
+        "iteration_type": "greenfield",
+        "case_name": "test rejection",
+        "validator": "test-user",
+        "simulation_user_responses": "reject all"
+      },
+      "expected_with_skill": {
+        "lessons_in_output_file": 0,
+        "decisions_log_has_rejections": true,
+        "no_lessons_written_silently": true
+      },
+      "evaluation_criteria": "pass si lessons.md no cambió y lessons-decisions.log registra todas las rejections con motivo"
+    }
+  ]
+}

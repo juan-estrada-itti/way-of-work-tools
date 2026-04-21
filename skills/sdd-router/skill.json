@@ -1,0 +1,33 @@
+{
+  "name": "sdd-router",
+  "description": "Guía del way of work SDD · tutor que redirige al siguiente paso correcto del pipeline",
+  "version": "1.0.0",
+  "tags": [
+    "sdd",
+    "pipeline",
+    "orquestacion",
+    "tutor",
+    "onboarding",
+    "way-of-work"
+  ],
+  "triggers": [
+    "por donde empiezo",
+    "que skill uso",
+    "sdd router",
+    "router",
+    "way of work",
+    "no se por donde",
+    "que sigue",
+    "siguiente paso",
+    "guia SDD",
+    "ayudame a empezar"
+  ],
+  "capabilities": [
+    "Diagnosticar la posición del usuario en el pipeline SDD con 3 preguntas",
+    "Aplicar 14 reglas de ruteo para recomendar la skill correcta",
+    "Aplicar 4 validaciones críticas del proceso (L-010 ulab, F-01 feedback líder, L-017 academy, RFC grande)",
+    "Devolver output estructurado con skill recomendada + razón + preparación + siguiente paso",
+    "Pedir información adicional cuando las respuestas son contradictorias o incompletas",
+    "Distinguir greenfield (iniciativa nueva) de brownfield (iteración sobre academy/ittilab)"
+  ]
+}

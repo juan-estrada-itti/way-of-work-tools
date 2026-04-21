@@ -1,0 +1,38 @@
+{
+  "name": "lessons-harvester",
+  "description": "Captura lessons.md automáticamente al cerrar iteraciones del pipeline SDD. Convierte intervenciones humanas en el pipeline en lecciones estructuradas con trigger + impacto + acción.",
+  "version": "1.0.0",
+  "tags": [
+    "sdd",
+    "pipeline",
+    "retrospectiva",
+    "lessons",
+    "human-in-the-loop",
+    "aprendizaje",
+    "cierre-iteracion"
+  ],
+  "triggers": [
+    "lessons",
+    "lessons harvester",
+    "capturar lecciones",
+    "lecciones aprendidas",
+    "que aprendimos",
+    "retrospectiva del proceso",
+    "cerrar iteración",
+    "human in the loop feedback",
+    "harvest lessons",
+    "lessons.md"
+  ],
+  "capabilities": [
+    "Leer carpetas de specs con versiones múltiples (v1, v2, v3) y hacer diff entre ellas",
+    "Leer comentarios de Confluence (open + resolved) vía MCP para detectar intervenciones humanas que gatillaron cambios",
+    "Clasificar cambios en 6 categorías (scope shift, technical discovery, naming, process gap, tool gap, skill gap)",
+    "Generar drafts de lessons estructuradas con problema + causa raíz + solución + clave reutilizable",
+    "Validar cada lesson con el humano antes de escribir al archivo (human-in-the-loop)",
+    "Append a lessons.md existente preservando numeración consecutiva, sin sobrescribir lecciones previas",
+    "Detectar y proponer fusión de lessons duplicadas o similares",
+    "Agrupar lessons por categoría (proceso / técnico / ejecución / integración)",
+    "Generar log de decisiones (lessons-decisions.log) con trazabilidad de qué se aceptó, editó o descartó",
+    "Producir sección 'Siguiente iteración' con recomendaciones de skills, convenciones y automatizaciones"
+  ]
+}

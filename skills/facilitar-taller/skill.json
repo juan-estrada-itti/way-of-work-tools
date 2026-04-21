@@ -1,0 +1,38 @@
+{
+  "name": "facilitar-taller",
+  "description": "Guía interactiva para facilitadores de talleres del Way of Work SDD · acompaña prep, ejecución en vivo y post-taller. 5 preguntas diagnósticas + output ajustado por contexto.",
+  "version": "1.0.0",
+  "tags": [
+    "taller",
+    "facilitation",
+    "workshop",
+    "sdd",
+    "way-of-work",
+    "pedagogia",
+    "prep"
+  ],
+  "triggers": [
+    "voy a dictar taller",
+    "taller mañana",
+    "preparar taller",
+    "guía taller",
+    "facilitar sesión",
+    "me toca dictar",
+    "checklist taller",
+    "ayudame con el taller",
+    "rehearsal",
+    "plan B taller",
+    "facilitar-taller",
+    "facilitador"
+  ],
+  "capabilities": [
+    "Diagnosticar contexto del facilitador con 5 preguntas (momento, tipo, tamaño, duración, nivel)",
+    "Generar checklist ajustado al contexto con prioridades (crítico/importante/nice-to-have) y tiempos estimados",
+    "Producir guión minuto a minuto ejecutable durante el taller",
+    "Escribir mensajes pegables (DMs a participantes, coordinación con co-facilitador, apertura, cierre)",
+    "Prevenir y mitigar 9 fallas típicas con plan B específico en vivo",
+    "Integrar con lessons-harvester al cerrar el taller para capturar aprendizajes",
+    "Referenciar docs existentes del proyecto (TALLER1-FINAL.md, shared_knowledge_iter_2, plan.md) como fuente autoritativa",
+    "Adaptar formato del taller según cruce nivel × duración × tamaño del grupo"
+  ]
+}
