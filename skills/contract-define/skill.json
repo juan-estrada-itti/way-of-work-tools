@@ -1,0 +1,39 @@
+{
+  "name": "contract-define",
+  "description": "Generador de contratos API compartidos entre frontend y backend a partir de RFC.",
+  "version": "1.0.0",
+  "author": "Juan Estrada",
+  "tags": [
+    "api-contract",
+    "frontend-backend",
+    "data-model",
+    "events",
+    "integration",
+    "sdd"
+  ],
+  "language": "es",
+  "triggers": [
+    "contrato API",
+    "contract define",
+    "api contract",
+    "definir contrato",
+    "contrato compartido",
+    "api-contract.md",
+    "data-model compartido"
+  ],
+  "capabilities": [
+    "generate-api-contracts",
+    "define-shared-data-models",
+    "document-events",
+    "establish-integration-patterns",
+    "validate-contract-completeness"
+  ],
+  "dependencies": [],
+  "metadata": {
+    "created": "2026-03-19",
+    "updated": "2026-03-19",
+    "difficulty": "advanced",
+    "category": "architecture",
+    "sdd_phase": "F3"
+  }
+}

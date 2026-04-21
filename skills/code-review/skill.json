@@ -1,0 +1,33 @@
+{
+  "name": "code-review",
+  "description": "Validates a pull request against the full SDD artifact chain (PRD, RFC, Contract) and project rules (CLAUDE.md). Runs a 6-step pipeline: Discovery Inverso, PRD Traceability, Contract Compliance, Project Rules Compliance, Cross-validation, and Scope Check. Produces a structured review report with BLOCKER/WARNING/INFO findings and a final verdict (APPROVE, REQUEST_CHANGES, APPROVE_WITH_COMMENTS). Triggers: 'code review', 'review PR', 'revisar PR', 'validar PR', 'review against CLAUDE.md', 'SDD review', 'review pipeline'.",
+  "version": "1.0.0",
+  "author": "Juan Estrada",
+  "tags": ["code-review", "quality", "compliance", "sdd", "pipeline", "pull-request"],
+  "language": "es",
+  "triggers": [
+    "code review",
+    "review PR",
+    "revisar PR",
+    "validar PR",
+    "review against CLAUDE.md",
+    "SDD review",
+    "review pipeline",
+    "PR review"
+  ],
+  "capabilities": [
+    "Validates PR files against RFC phases (discovery inverso)",
+    "Maps PRD acceptance criteria to tests (traceability)",
+    "Checks endpoint/DTO compliance against API contracts",
+    "Enforces project architecture rules from CLAUDE.md",
+    "Detects contradictions across PRD, RFC, Contract and code",
+    "Evaluates scope (under-delivery, over-delivery, gold-plating)",
+    "Produces structured review report with severity ratings",
+    "Posts review as GitHub PR comment"
+  ],
+  "metadata": {
+    "created": "2026-04-16",
+    "difficulty": "advanced",
+    "category": "quality-assurance"
+  }
+}

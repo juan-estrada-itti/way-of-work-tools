@@ -1,0 +1,30 @@
+{
+  "name": "create-prd",
+  "description": "Document a PRD based on completed discovery work. Translate research findings, user insights, and validated problems into a clear specification answering WHAT to build and WHY—without technical implementation details. Use after discovery is complete, when documenting product requirements, preparing feature specs, or aligning stakeholders.",
+  "version": "2.0.0",
+  "author": "tech-emergentes-team",
+  "tags": [
+    "product-management",
+    "prd",
+    "requirements",
+    "discovery",
+    "documentation",
+    "pragmatic-prd"
+  ],
+  "triggers": [
+    "create-prd",
+    "write-prd",
+    "prd-document",
+    "product-requirements",
+    "crear-prd"
+  ],
+  "capabilities": [
+    "Documentar PRDs basados en discovery",
+    "Estructurar requerimientos de producto con evidencia",
+    "Definir scope (MVP vs. futuro)",
+    "Traducir hallazgos de discovery a hipótesis testeable",
+    "Establecer métricas de éxito con baseline y target",
+    "Evitar alucinación: marcar gaps de información",
+    "Separar PRD de especificaciones técnicas"
+  ]
+}

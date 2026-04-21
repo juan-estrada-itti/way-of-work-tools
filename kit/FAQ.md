@@ -117,33 +117,6 @@ git config --global url."https://github.com/".insteadOf git@github.com:
 bash ~/.way-of-work-kit/way-of-work-tools/kit/install-kit.sh
 ```
 
----
-
-## 4.5 · `git clone` falla con `Repository not found` en ittidigital
-
-Tu SSH funciona · pero **no sos colaborador** del org `ittidigital` · no podés acceder al repo privado `tech_emergentes_skills`.
-
-**Fix**
-
-1. Mandale DM a Juan con tu **username de GitHub**
-   (para verlo · https://github.com/settings/profile)
-
-2. Juan te agrega al team `ittidigital/tech-emergentes`
-   (toma 30 segundos)
-
-3. Confirmá acceso:
-   ```bash
-   git clone git@github.com:ittidigital/tech_emergentes_skills.git /tmp/test-clone
-   # Si clona · estás dentro · borrá /tmp/test-clone
-   rm -rf /tmp/test-clone
-   ```
-
-4. Volvé a correr el install:
-   ```bash
-   bash <(curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh)
-   ```
-
-**Si quedás con 4/10 skills** · tenés las 4 públicas (del mirror `juan-estrada-itti/way-of-work-tools` + `office-hours` de gstack). Las 6 privadas las sumás después de que Juan te dé acceso.
 
 ---
 

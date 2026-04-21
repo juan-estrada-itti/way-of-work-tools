@@ -1,0 +1,33 @@
+{
+  "name": "task-dependency-analyzer",
+  "description": "Analiza planes técnicos o listas de tareas para determinar dependencias, identifica tareas paralelas vs secuenciales, produce grafos de dependencias como diagramas Mermaid con fases de ejecución y ruta crítica / Analyzes technical plans or task lists to determine dependencies, identifies parallel vs sequential tasks, produces dependency graphs as Mermaid diagrams with execution phases and critical path",
+  "version": "1.0.0",
+  "author": "Juan Estrada",
+  "tags": ["dependencies", "dag", "mermaid", "task-planning", "critical-path", "ai-skill"],
+  "language": "es",
+  "triggers": [
+    "dependency graph",
+    "task ordering",
+    "parallel tasks",
+    "critical path",
+    "execution phases",
+    "qué depende de qué",
+    "tareas paralelas",
+    "grafo de dependencias",
+    "analizar dependencias"
+  ],
+  "capabilities": [
+    "Analiza dependencias entre tareas de un plan técnico / Analyzes task dependencies in technical plans",
+    "Genera diagramas Mermaid con fases de ejecución / Generates Mermaid diagrams with execution phases",
+    "Identifica ruta crítica / Identifies critical path",
+    "Detecta falsas dependencias / Detects false dependencies",
+    "Genera JSON compatible con Agents Kanban Local / Generates Agents Kanban Local compatible JSON"
+  ],
+  "dependencies": [],
+  "metadata": {
+    "created": "2026-04-14",
+    "updated": "2026-04-14",
+    "difficulty": "intermediate",
+    "category": "planning"
+  }
+}

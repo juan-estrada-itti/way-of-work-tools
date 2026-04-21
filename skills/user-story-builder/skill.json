@@ -1,0 +1,71 @@
+{
+  "name": "user-story-builder",
+  "version": "1.0.0",
+  "displayName": "User Story Builder",
+  "description": "Expert in building, evaluating, and improving user stories following INVEST principles and agile best practices. Creates new stories, evaluates existing ones, splits large stories, and integrates with Jira for direct creation and updates.",
+  "type": "methodology",
+  "category": "agile",
+  "language": "multilingual",
+  "languages": ["es", "en"],
+  "author": "SDD Pipeline",
+  "license": "MIT",
+  "keywords": [
+    "user stories",
+    "INVEST",
+    "acceptance criteria",
+    "story splitting",
+    "agile",
+    "backlog",
+    "refinement",
+    "Jira",
+    "historias de usuario",
+    "criterios de aceptación",
+    "refinamiento"
+  ],
+  "triggers": {
+    "keywords": [
+      "historia de usuario",
+      "user story",
+      "criterios de aceptación",
+      "acceptance criteria",
+      "INVEST",
+      "story splitting",
+      "refinamiento",
+      "backlog grooming",
+      "write a story",
+      "evaluar historia",
+      "dividir historia",
+      "tickets Jira"
+    ],
+    "contexts": [
+      "agile development",
+      "sprint planning",
+      "backlog refinement",
+      "requirements engineering",
+      "Jira management"
+    ]
+  },
+  "capabilities": [
+    "Create new user stories with Como/Quiero/Para format + verifiable ACs",
+    "Evaluate existing stories with INVEST diagnostic",
+    "Split large stories by user flow, CRUD, business rule, platform, or role",
+    "Detect red flags (ambiguous language, missing ACs, hidden dependencies)",
+    "Jira integration: create, read, update, and split stories directly",
+    "Connect business value with technical implementation",
+    "Works in Spanish and English"
+  ],
+  "fileTypes": ["markdown"],
+  "tags": [
+    "agile",
+    "user-stories",
+    "INVEST",
+    "jira",
+    "requirements",
+    "backlog",
+    "spec-driven-development"
+  ],
+  "releaseDate": "2026-03-30",
+  "lastUpdated": "2026-03-30",
+  "status": "active",
+  "relatedSkills": ["sdd-prd-builder", "prd-slice", "rfc-builder"]
+}

@@ -97,78 +97,20 @@ echo $ANTHROPIC_API_KEY
 
 ---
 
-## Paso 3 · SSH a GitHub · pre-requisito para clonar skills privadas (5-10 min)
-
-⚠️ **Importante** · algunas skills vienen del repo privado `ittidigital/tech_emergentes_skills` · necesitás **acceso SSH al org** para que el install-kit funcione al 100%.
-
-### Paso 3.1 · Verificá si ya tenés SSH a GitHub
-
-```bash
-ssh -T git@github.com
-```
-
-Si ves · *"Hi <tu-usuario>! You've successfully authenticated"* · andá directo al Paso 4.
-Si ves · *"Permission denied (publickey)"* · seguí acá.
-
-### Paso 3.2 · Generá una SSH key (si no tenés)
-
-```bash
-ssh-keygen -t ed25519 -C "tu-email@itti.digital"
-# Enter, Enter, Enter · sin password está bien para este setup
-
-# Copiá la public key al portapapeles:
-pbcopy < ~/.ssh/id_ed25519.pub   # macOS
-# o
-cat ~/.ssh/id_ed25519.pub         # Linux / WSL · copiás a mano
-```
-
-### Paso 3.3 · Agregala a tu cuenta de GitHub
-
-1. Abrí https://github.com/settings/ssh/new
-2. Pegá la public key del clipboard
-3. Ponele un nombre (ej: *"macbook-itti"*)
-4. Clickeá **Add SSH key**
-
-### Paso 3.4 · Verificá que anda
-
-```bash
-ssh -T git@github.com
-# Hi <tu-usuario>! You've successfully authenticated, but GitHub does not provide shell access.
-```
-
-### Paso 3.5 · ⚠️ Acceso al org ittidigital
-
-Aparte de la SSH key, necesitás ser **colaborador** del org `ittidigital` · sino el clone al repo privado falla.
-
-**Cómo verificar** · intentá clonar:
-```bash
-git clone git@github.com:ittidigital/tech_emergentes_skills.git /tmp/test-clone
-# Si clona sin error · tenés acceso · borrá /tmp/test-clone
-# Si dice "Repository not found" · no tenés acceso · pedile a Juan que te agregue
-```
-
-Si no tenés acceso:
-- Mandale DM a Juan con tu `username` de GitHub
-- Juan te agrega al team `ittidigital/tech-emergentes` (lleva 30 segundos)
-- Reintentás el clone
-
----
-
-## Paso 4 · Instalar las skills (2 min · 1 comando)
+## Paso 3 · Instalar las skills (2 min · 1 comando)
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh | bash
 ```
 
 El script:
-1. Clona las skills propias del equipo (repo público · `way-of-work-tools`)
-2. Clona las skills del repo privado (`tech_emergentes_skills`) · **requiere SSH + acceso al org** (Paso 3)
-3. Las linkea a tu `~/.claude/skills/`
-4. Clona los PRs abiertos que todavía no mergearon
-5. Instala `/office-hours` desde gstack (repo público · garrytan/gstack)
-6. Imprime checklist de confirmación
+1. Clona `way-of-work-tools` (repo público · con las 9 skills del equipo + drafts)
+2. Instala `/office-hours` desde gstack (repo público · externa)
+3. Linkea las 10 skills a tu `~/.claude/skills/`
+4. Imprime checklist de confirmación
 
 **No borra nada de tu setup** · si ya tenés skills propias, las respeta.
+**No necesitás SSH ni acceso a org** · ambos repos son públicos.
 
 ### Si el `curl` falla
 
@@ -180,7 +122,7 @@ bash ~/way-of-work-tools/kit/install-kit.sh
 
 ---
 
-## Paso 5 · Verificar que quedó bien (5 min)
+## Paso 4 · Verificar que quedó bien (5 min)
 
 Corré el test de validación:
 ```bash
@@ -201,7 +143,7 @@ Si alguna falla · [FAQ](./FAQ.md) o escribime en Slack `#way-of-work`.
 
 ---
 
-## Paso 6 · Primera corrida (5 min · opcional pero recomendado)
+## Paso 5 · Primera corrida (5 min · opcional pero recomendado)
 
 Abrí una carpeta vacía y probá una skill:
 

@@ -4,7 +4,7 @@
 
 ---
 
-## Arranque rápido · 4 pasos
+## Arranque rápido · 3 pasos
 
 ```bash
 # 1 · Instalar Claude Code (requiere Node.js 18+)
@@ -17,12 +17,7 @@ claude --version
 echo 'export ANTHROPIC_API_KEY="sk-ant-api03-TU-KEY"' >> ~/.zshrc
 source ~/.zshrc
 
-# 3 · SSH a GitHub · necesario para clonar repos privados
-ssh -T git@github.com
-# Si falla · mirá Paso 3 de kit/INSTALL.md
-# Además necesitás acceso al org ittidigital · Juan te agrega si pedís
-
-# 4 · Instalar las 10 skills del pipeline
+# 3 · Instalar las 10 skills del pipeline
 curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh | bash
 ```
 

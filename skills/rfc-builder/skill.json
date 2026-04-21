@@ -1,0 +1,32 @@
+{
+  "name": "rfc-builder",
+  "description": "Constructor interactivo de RFCs técnicos a partir de PRDs. Genera documentos RFC completos mediante un flujo híbrido: descubrimiento, análisis de codebase y generación iterativa / Interactive technical RFC builder from PRDs. Generates complete RFC documents through a hybrid flow: discovery, codebase analysis, and iterative generation",
+  "version": "1.0.0",
+  "author": "Juan Estrada",
+  "tags": ["rfc", "architecture", "documentation", "prd", "technical-design", "ai-skill"],
+  "language": "es",
+  "triggers": [
+    "rfc",
+    "request for comments",
+    "technical proposal",
+    "propuesta técnica",
+    "design document",
+    "documento de diseño",
+    "prd to rfc",
+    "architecture decision"
+  ],
+  "capabilities": [
+    "Genera RFCs técnicos completos desde PRDs / Generates complete technical RFCs from PRDs",
+    "Analiza codebase activamente para contextualizar / Actively analyzes codebase for context",
+    "Flujo interactivo de descubrimiento / Interactive discovery flow",
+    "Soporta múltiples tipos: Feature, Infraestructura, Migración, Integración, AI/ML, Refactoring",
+    "Incluye checklist de calidad de 12 puntos / Includes 12-point quality checklist"
+  ],
+  "dependencies": [],
+  "metadata": {
+    "created": "2026-02-24",
+    "updated": "2026-02-24",
+    "difficulty": "advanced",
+    "category": "documentation"
+  }
+}
