@@ -222,9 +222,9 @@ Dentro de Claude Code:
 
 | Canal | Para qué |
 |---|---|
-| Slack `#way-of-work` | Preguntas generales · respuestas en <30 min durante la semana |
-| Slack DM a Juan | Algo bloqueante · necesitás hoy |
-| Alejo en `#way-of-work` | Soporte técnico · instalación · plan B |
+| Slack `#way-of-work` | Preguntas generales · Juan responde en <30 min durante la semana |
+| Slack DM a Juan | Soporte técnico · instalación · errores · plan B |
+| Alejo en `#way-of-work` | Observa la dinámica · feedback pedagógico · no responde técnicas |
 
 ---
 

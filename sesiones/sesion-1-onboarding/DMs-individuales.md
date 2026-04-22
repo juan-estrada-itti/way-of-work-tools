@@ -1,6 +1,6 @@
 # DMs individuales · Sesión 1 · 21/4/2026
 
-**16 participantes + Alejo (soporte)** · cada mensaje adaptado al perfil.
+**16 participantes + Alejo (asesor pedagógico)** · cada mensaje adaptado al perfil.
 
 ---
 
@@ -31,7 +31,7 @@ Ya no hay placeholders · cada mensaje está listo:
 
 # GRUPO 1 · Técnicos seniors / roles especiales
 
-## Alejo Bernal · Soporte
+## Alejo Bernal · Asesor pedagógico
 
 ```
 Alejo ·
@@ -559,7 +559,7 @@ Opción 1 · lo hacés solo · 30-40 min
    Y cloná el repo del viernes (workspace del relay · 2 min):
    https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
-   Si te trabás · Slack #way-of-work · Alejo y yo respondemos.
+   Si te trabás · Slack #way-of-work · respondo yo · Alejo observa la dinámica.
 
 Opción 2 · 20 min de videollamada conmigo
    Si la terminal te saca · mejor esto · lo hacemos juntos:
@@ -600,7 +600,7 @@ Antes del próximo viernes 24/4 a las 11:00 (Paraguay), 2 tareas async:
   • Traer 1 idea de feature greenfield para el ejercicio
 
 Soporte durante la semana en este canal · respondemos entre
-yo y Alejo.
+yo durante la semana.
 
 Feliz de cómo arrancamos · nos vemos el viernes ·
 ```
