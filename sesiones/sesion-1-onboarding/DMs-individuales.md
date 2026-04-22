@@ -4,17 +4,19 @@
 
 ---
 
-## ⚙️ Antes de mandar · 2 reemplazos globales
+## ⚙️ Valores ya embebidos · listo para copy/paste
 
-| Placeholder | Qué poner |
+Ya no hay placeholders · cada mensaje está listo:
+
+| Qué | Valor embebido |
 |---|---|
-| `24/4 a las 11:00 (Paraguay)` | Ej: *"viernes 25/4 a las 11:00"* |
-| `miércoles 22 (hoy) a las 5 PM Paraguay o jueves 23 a las 5 PM Paraguay · decime cuál te acomoda` | Ej: `calendly.com/juan-estrada-itti/way-of-work` · o *"mandame 3 horarios y agendamos"* |
+| Fecha del taller 2 | **viernes 24/4 a las 11:00 Paraguay** |
+| 1-on-1 para no-técnicos | **miércoles 22 (hoy) 5 PM Paraguay** o **jueves 23 5 PM Paraguay** |
+| Kit de instalación | `https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md` |
+| Repo del proyecto | `https://github.com/juan-estrada-itti/taller-sdd-favoritos` |
+| Canal Slack | `#way-of-work` (ya existe) |
 
-Los links **ya están embebidos**:
-- Kit de instalación · `https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md`
-- Repo del proyecto (workspace del viernes) · `https://github.com/juan-estrada-itti/taller-sdd-favoritos`
-- Canal Slack · `#way-of-work` (ya existe)
+**Único pendiente** · handle de Andrés López · su DM queda para confirmar.
 
 ---
 
