@@ -10,7 +10,7 @@ Ya no hay placeholders · cada mensaje está listo:
 
 | Qué | Valor embebido |
 |---|---|
-| Fecha del taller 2 | **viernes 24/4 a las 11:00 Paraguay** |
+| Fecha del taller 2 | **viernes 24/4 de 4:30 a 6:00 PM Paraguay** |
 | 1-on-1 para no-técnicos | **miércoles 22 (hoy) 5 PM Paraguay** o **jueves 23 5 PM Paraguay** |
 | Kit de instalación | `https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md` |
 | Repo del proyecto | `https://github.com/juan-estrada-itti/taller-sdd-favoritos` |
@@ -39,7 +39,7 @@ Alejo ·
 Taller 1 cerrado · impecable como siempre tu mirada lateral
 sobre el chat. Gracias por bancarla.
 
-3 pedidos para esta semana y viernes 24/4 a las 11:00 Paraguay:
+3 pedidos para esta semana y viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Instalá el kit vos también · 30 min · así podés resolver
 en vivo lo que te pregunten los demás:
@@ -54,7 +54,7 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/FAQ.md
 
    Si algo no está en FAQ · lo agregamos juntos · así crece.
 
-3 · El viernes son 2 horas · mismos emoji signals:
+3 · El viernes son 90 min · mismos emoji signals:
    👀 atento · 🆘 ayuda · ✅ ok · 🔥 algo roto
 
 Los 4 no-técnicos del grupo son Ana · Juan Pa · Leo · Juan Ma.
@@ -76,7 +76,7 @@ Sergio ·
 Gracias por el taller · tu experiencia con Opus 4.6 y Cursor
 le dio temple al grupo · los demás vieron que sí se puede.
 
-Dos cosas antes del próximo viernes 24/4 a las 11:00 Paraguay:
+Dos cosas antes del próximo viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Instalá el kit · 10 min para vos · ya tenés todo andando:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -106,7 +106,7 @@ Javier ·
 Gracias por bancar el taller hoy · la presencia de VP cambia
 el tono · sostiene el compromiso del resto del equipo.
 
-Dos cosas antes del viernes 24/4 a las 11:00 Paraguay:
+Dos cosas antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · El kit · 30 min máximo · tu setup con Docker que me pasaste
 me sirvió de referencia para el install-kit.sh · mirá el hilo:
@@ -118,7 +118,7 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
    Si querés hacerlo por Docker (tu script original), avisame
    y hacemos una versión dedicada en tools/.
 
-2 · El viernes son 2 horas · ejercicio real en parejas · tu
+2 · El viernes son 90 min · ejercicio real en parejas · tu
 pareja es Sergio otra vez · fase PRD. Si podés estar 100%
 presente es clave para la señal al resto.
 
@@ -138,7 +138,7 @@ Fede ·
 Gracias por el taller · tu mirada de AI eng dio contexto técnico
 que el resto no hubiera tenido de otra forma.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit instalado · 10 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -171,7 +171,7 @@ Andrés ·
 Gracias por venir · que estés tan presente en la operativa le
 da credibilidad al way of work ante el resto del equipo.
 
-Una sola cosa antes del viernes 24/4 a las 11:00 Paraguay:
+Una sola cosa antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit instalado · 30 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -180,7 +180,7 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
    https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
 El viernes · relay de 8 parejas · tu pareja es Fede · fase RFC.
-Son 2 horas. Tu presencia como head importa tanto o más que la
+Son 90 min. Tu presencia como head importa tanto o más que la
 de cualquier otro.
 
 Una nota · mientras probás el kit, si notás algo que no
@@ -204,7 +204,7 @@ Gracias por venir. Que trabajes full en Cursor nos ayuda a
 recordar que el way of work tiene que funcionar en las 3 IDEs ·
 no atarnos a Claude Code pelado.
 
-Antes del próximo viernes 24/4 a las 11:00 Paraguay:
+Antes del próximo viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Instalá el kit · 10 min · 1 comando:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -235,7 +235,7 @@ Luciano ·
 
 Gracias por venir al taller.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -265,7 +265,7 @@ Nico Canese ·
 Gracias por venir. El tándem con Cóppola es de los más fuertes
 del grupo en mirada técnica.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit · 15 min · directo:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -292,7 +292,7 @@ Nico Cóppola ·
 
 Gracias por venir. Con Canese tienen buena onda técnica.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -320,7 +320,7 @@ German ·
 
 Gracias por venir al taller.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit instalado · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -348,7 +348,7 @@ Fernando ·
 
 Gracias por venir.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -376,7 +376,7 @@ Stephany ·
 
 Gracias por venir al taller.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit instalado · 15-30 min según experiencia terminal:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -407,7 +407,7 @@ Carlos ·
 
 Gracias por venir.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Kit · 15-30 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -441,7 +441,7 @@ Gracias por el taller · tu experiencia haciendo /create-prd
 fue importante para el grupo · vieron que esto no es teoría ·
 alguien de adentro ya lo usó.
 
-Antes del viernes 24/4 a las 11:00 Paraguay:
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
 
 1 · Instalá el kit · 20 min · vos ya tenés ambiente de Claude ·
 te toca solo agregar las skills nuevas:
@@ -473,7 +473,7 @@ Gracias por venir al taller · tu mirada de cultura nos baja a
 tierra cuando los técnicos nos perdemos en el "cómo" y olvidamos
 el "para qué". Importante que sigas adentro.
 
-Antes del viernes 24/4 a las 11:00 Paraguay una sola cosa · dejar la
+Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay una sola cosa · dejar la
 compu lista. 2 opciones, elegís:
 
 Opción 1 · lo hacés sola · guía paso a paso en castellano:
@@ -511,7 +511,7 @@ Gracias por participar del taller. La mirada de negocio es lo
 que evita que el equipo técnico se vaya por la tangente ·
 crucial tenerla en la mesa.
 
-Setup para el viernes 24/4 a las 11:00 Paraguay · 30 min · misma compu
+Setup para el viernes 24/4 de 4:30 a 6:00 PM Paraguay · 30 min · misma compu
 que usaste hoy:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
@@ -547,7 +547,7 @@ Gracias por venir al taller. Como PM de ulab tu mirada producto
 es clave para que este way of work sirva al equipo real ·
 no quede en teoría de arquitectos.
 
-Antes del próximo viernes 24/4 a las 11:00 Paraguay una sola cosa ·
+Antes del próximo viernes 24/4 de 4:30 a 6:00 PM Paraguay una sola cosa ·
 dejar la compu lista para el ejercicio en vivo.
 
 2 opciones, elegís:
