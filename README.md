@@ -34,6 +34,7 @@ way-of-work-tools/
 ├── kit/                             ⭐ empezá acá si venís de un taller
 │   ├── INSTALL.md                   · guía paso a paso (30-40 min)
 │   ├── install-kit.sh               · script de instalación
+│   ├── install-docker.md            · setup para Claude Code en Docker (+ git push)
 │   ├── verify-kit.sh                · test de 5 min post-install
 │   └── FAQ.md                       · troubleshooting
 │
