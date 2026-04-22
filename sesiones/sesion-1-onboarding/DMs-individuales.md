@@ -11,7 +11,10 @@
 | `<FECHA_VIERNES>` | Ej: *"viernes 25/4 a las 11:00"* |
 | `<CALENDLY_LINK>` | Ej: `calendly.com/juan-estrada-itti/way-of-work` · o *"mandame 3 horarios y agendamos"* |
 
-Los links del repo **ya están embebidos** · no hay que tocarlos.
+Los links **ya están embebidos**:
+- Kit de instalación · `https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md`
+- Repo del proyecto (workspace del viernes) · `https://github.com/juan-estrada-itti/taller-sdd-favoritos`
+- Canal Slack · `#way-of-work` (ya existe)
 
 ---
 
@@ -39,6 +42,9 @@ sobre el chat. Gracias por bancarla.
 1 · Instalá el kit vos también · 30 min · así podés resolver
 en vivo lo que te pregunten los demás:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
+
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
 2 · Durante la semana · monitoreá Slack #way-of-work. Van a
 preguntar cómo instalar · las respuestas están en:
@@ -73,6 +79,9 @@ Dos cosas antes del próximo viernes (<FECHA_VIERNES>):
 1 · Instalá el kit · 10 min para vos · ya tenés todo andando:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
    O directo 1 comando:
    curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit.sh | bash
 
@@ -101,6 +110,9 @@ Dos cosas antes del viernes (<FECHA_VIERNES>):
 me sirvió de referencia para el install-kit.sh · mirá el hilo:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
    Si querés hacerlo por Docker (tu script original), avisame
    y hacemos una versión dedicada en tools/.
 
@@ -128,6 +140,9 @@ Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit instalado · 10 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
+
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
    Fijate especialmente en skills-overlays/ · son las v2 que
    agregan schema de dependencias al frontmatter · si te
@@ -159,6 +174,9 @@ Una sola cosa antes del viernes (<FECHA_VIERNES>):
 1 · Kit instalado · 30 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
 El viernes · relay de 8 parejas · tu pareja es Fede · fase RFC.
 Son 2 horas. Tu presencia como head importa tanto o más que la
 de cualquier otro.
@@ -189,6 +207,9 @@ Antes del próximo viernes (<FECHA_VIERNES>):
 1 · Instalá el kit · 10 min · 1 comando:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
    Como usás Cursor, algunas skills se cargan distinto (Rules
    en vez de SKILL.md). El kit tiene una sección sobre eso ·
    si algo no queda claro, Slack #way-of-work.
@@ -217,6 +238,9 @@ Antes del viernes (<FECHA_VIERNES>):
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
 2 · 1 idea greenfield para el relay.
 
 Una cosa · tu pareja el viernes es Ana María (cultura) · fase
@@ -244,6 +268,9 @@ Antes del viernes (<FECHA_VIERNES>):
 1 · Kit · 15 min · directo:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
 2 · 1 idea greenfield.
 
 PS · fase que les toca el viernes con Cóppola es Tasks · plan
@@ -267,6 +294,9 @@ Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
+
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
 2 · 1 idea greenfield.
 
@@ -293,6 +323,9 @@ Antes del viernes (<FECHA_VIERNES>):
 1 · Kit instalado · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
 2 · Pensá 1 idea greenfield · para el relay del viernes.
 
 PS · tu pareja es Fernando López · fase Code Review.
@@ -318,6 +351,9 @@ Antes del viernes (<FECHA_VIERNES>):
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
 2 · 1 idea greenfield.
 
 PS · el viernes con German hacen Code Review · última fase del
@@ -342,6 +378,9 @@ Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit instalado · 15-30 min según experiencia terminal:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
+
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
    Si preferís hacerlo acompañada · agendame acá:
    <CALENDLY_LINK>
@@ -370,6 +409,9 @@ Antes del viernes (<FECHA_VIERNES>):
 
 1 · Kit · 15-30 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
+
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
    Si querés hacerlo juntos en 20 min:
    <CALENDLY_LINK>
@@ -403,6 +445,9 @@ Antes del viernes (<FECHA_VIERNES>):
 te toca solo agregar las skills nuevas:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
+
    Si algo no anda · directo escribime · no pierdas tiempo.
 
 2 · Pensá 1 idea greenfield · algo real que te gustaría
@@ -431,6 +476,9 @@ compu lista. 2 opciones, elegís:
 
 Opción 1 · lo hacés sola · guía paso a paso en castellano:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
+
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
 Opción 2 · 20 min de videollamada conmigo · lo hacemos juntos:
 <CALENDLY_LINK>
@@ -464,6 +512,9 @@ crucial tenerla en la mesa.
 Setup para el viernes (<FECHA_VIERNES>) · 30 min · misma compu
 que usaste hoy:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
+
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
 Si algo no anda · ping directo · lo resolvemos en 10 min · no
 quiero que pierdas tiempo en cuestiones técnicas.
@@ -502,6 +553,9 @@ dejar la compu lista para el ejercicio en vivo.
 Opción 1 · lo hacés solo · 30-40 min
    Guía paso a paso (tiene comandos copy-paste):
    https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
+
+   Y cloná el repo del viernes (workspace del relay · 2 min):
+   https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
    Si te trabás · Slack #way-of-work · Alejo y yo respondemos.
 

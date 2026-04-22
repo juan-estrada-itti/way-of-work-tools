@@ -143,7 +143,41 @@ Si alguna falla · [FAQ](./FAQ.md) o escribime en Slack `#way-of-work`.
 
 ---
 
-## Paso 5 · Primera corrida (5 min · opcional pero recomendado)
+## Paso 5 · Cloná el repo del proyecto · workspace del viernes (2 min)
+
+El viernes vamos a trabajar sobre un repo compartido · feature "favoritos de skills" · proyecto greenfield.
+
+```bash
+cd ~
+git clone https://github.com/juan-estrada-itti/taller-sdd-favoritos.git
+cd taller-sdd-favoritos
+cat README.md
+```
+
+En el `README.md` vas a ver tu fase asignada + el flujo del relay.
+
+**Estructura · 9 fases del pipeline** · cada pareja pega su output en su carpeta:
+
+```
+taller-sdd-favoritos/
+├── README.md                  · info del proyecto + asignación de parejas
+├── CLAUDE.md                  · convenciones del repo (V3 ✓)
+├── docs/
+│   ├── 00-discovery/          · Pareja 1
+│   ├── 01-prd/                · Pareja 2
+│   ├── 02-rfc/                · Pareja 3
+│   ├── 04-adrs/               · Pareja 4
+│   ├── 03-contracts/          · Pareja 5
+│   ├── 05-stories/            · Pareja 6
+│   ├── 06-plans/              · Pareja 7a
+│   ├── 07-dag/                · Pareja 7b
+│   └── 08-reviews/            · Pareja 8
+└── src/                       · código (si alcanzamos)
+```
+
+---
+
+## Paso 6 · Primera corrida (5 min · opcional pero recomendado)
 
 Abrí una carpeta vacía y probá una skill:
 
