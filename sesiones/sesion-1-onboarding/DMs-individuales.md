@@ -8,8 +8,8 @@
 
 | Placeholder | Qué poner |
 |---|---|
-| `<FECHA_VIERNES>` | Ej: *"viernes 25/4 a las 11:00"* |
-| `<CALENDLY_LINK>` | Ej: `calendly.com/juan-estrada-itti/way-of-work` · o *"mandame 3 horarios y agendamos"* |
+| `24/4 a las 11:00 (Paraguay)` | Ej: *"viernes 25/4 a las 11:00"* |
+| `miércoles 22 (hoy) a las 5 PM Paraguay o jueves 23 a las 5 PM Paraguay · decime cuál te acomoda` | Ej: `calendly.com/juan-estrada-itti/way-of-work` · o *"mandame 3 horarios y agendamos"* |
 
 Los links **ya están embebidos**:
 - Kit de instalación · `https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md`
@@ -37,7 +37,7 @@ Alejo ·
 Taller 1 cerrado · impecable como siempre tu mirada lateral
 sobre el chat. Gracias por bancarla.
 
-3 pedidos para esta semana y viernes (<FECHA_VIERNES>):
+3 pedidos para esta semana y viernes 24/4 a las 11:00 Paraguay:
 
 1 · Instalá el kit vos también · 30 min · así podés resolver
 en vivo lo que te pregunten los demás:
@@ -74,7 +74,7 @@ Sergio ·
 Gracias por el taller · tu experiencia con Opus 4.6 y Cursor
 le dio temple al grupo · los demás vieron que sí se puede.
 
-Dos cosas antes del próximo viernes (<FECHA_VIERNES>):
+Dos cosas antes del próximo viernes 24/4 a las 11:00 Paraguay:
 
 1 · Instalá el kit · 10 min para vos · ya tenés todo andando:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -104,7 +104,7 @@ Javier ·
 Gracias por bancar el taller hoy · la presencia de VP cambia
 el tono · sostiene el compromiso del resto del equipo.
 
-Dos cosas antes del viernes (<FECHA_VIERNES>):
+Dos cosas antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · El kit · 30 min máximo · tu setup con Docker que me pasaste
 me sirvió de referencia para el install-kit.sh · mirá el hilo:
@@ -136,7 +136,7 @@ Fede ·
 Gracias por el taller · tu mirada de AI eng dio contexto técnico
 que el resto no hubiera tenido de otra forma.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit instalado · 10 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -169,7 +169,7 @@ Andrés ·
 Gracias por venir · que estés tan presente en la operativa le
 da credibilidad al way of work ante el resto del equipo.
 
-Una sola cosa antes del viernes (<FECHA_VIERNES>):
+Una sola cosa antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit instalado · 30 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -202,7 +202,7 @@ Gracias por venir. Que trabajes full en Cursor nos ayuda a
 recordar que el way of work tiene que funcionar en las 3 IDEs ·
 no atarnos a Claude Code pelado.
 
-Antes del próximo viernes (<FECHA_VIERNES>):
+Antes del próximo viernes 24/4 a las 11:00 Paraguay:
 
 1 · Instalá el kit · 10 min · 1 comando:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -233,7 +233,7 @@ Luciano ·
 
 Gracias por venir al taller.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -263,7 +263,7 @@ Nico Canese ·
 Gracias por venir. El tándem con Cóppola es de los más fuertes
 del grupo en mirada técnica.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit · 15 min · directo:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -290,7 +290,7 @@ Nico Cóppola ·
 
 Gracias por venir. Con Canese tienen buena onda técnica.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -318,7 +318,7 @@ German ·
 
 Gracias por venir al taller.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit instalado · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -346,7 +346,7 @@ Fernando ·
 
 Gracias por venir.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit · 15 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -374,7 +374,7 @@ Stephany ·
 
 Gracias por venir al taller.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit instalado · 15-30 min según experiencia terminal:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -383,7 +383,7 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
    https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
    Si preferís hacerlo acompañada · agendame acá:
-   <CALENDLY_LINK>
+   miércoles 22 (hoy) a las 5 PM Paraguay o jueves 23 a las 5 PM Paraguay · decime cuál te acomoda
 
 2 · 1 idea de feature greenfield para el ejercicio.
 
@@ -405,7 +405,7 @@ Carlos ·
 
 Gracias por venir.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Kit · 15-30 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -414,7 +414,7 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
    https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
    Si querés hacerlo juntos en 20 min:
-   <CALENDLY_LINK>
+   miércoles 22 (hoy) a las 5 PM Paraguay o jueves 23 a las 5 PM Paraguay · decime cuál te acomoda
 
 2 · 1 idea greenfield.
 
@@ -439,7 +439,7 @@ Gracias por el taller · tu experiencia haciendo /create-prd
 fue importante para el grupo · vieron que esto no es teoría ·
 alguien de adentro ya lo usó.
 
-Antes del viernes (<FECHA_VIERNES>):
+Antes del viernes 24/4 a las 11:00 Paraguay:
 
 1 · Instalá el kit · 20 min · vos ya tenés ambiente de Claude ·
 te toca solo agregar las skills nuevas:
@@ -471,7 +471,7 @@ Gracias por venir al taller · tu mirada de cultura nos baja a
 tierra cuando los técnicos nos perdemos en el "cómo" y olvidamos
 el "para qué". Importante que sigas adentro.
 
-Antes del viernes (<FECHA_VIERNES>) una sola cosa · dejar la
+Antes del viernes 24/4 a las 11:00 Paraguay una sola cosa · dejar la
 compu lista. 2 opciones, elegís:
 
 Opción 1 · lo hacés sola · guía paso a paso en castellano:
@@ -481,7 +481,7 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
    https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
 Opción 2 · 20 min de videollamada conmigo · lo hacemos juntos:
-<CALENDLY_LINK>
+miércoles 22 (hoy) a las 5 PM Paraguay o jueves 23 a las 5 PM Paraguay · decime cuál te acomoda
 
 Si algún término te suena raro · mandame por acá la palabra ·
 te lo traduzco sin jerga.
@@ -509,7 +509,7 @@ Gracias por participar del taller. La mirada de negocio es lo
 que evita que el equipo técnico se vaya por la tangente ·
 crucial tenerla en la mesa.
 
-Setup para el viernes (<FECHA_VIERNES>) · 30 min · misma compu
+Setup para el viernes 24/4 a las 11:00 Paraguay · 30 min · misma compu
 que usaste hoy:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
@@ -520,7 +520,7 @@ Si algo no anda · ping directo · lo resolvemos en 10 min · no
 quiero que pierdas tiempo en cuestiones técnicas.
 
 Si preferís hacerlo juntos:
-<CALENDLY_LINK>
+miércoles 22 (hoy) a las 5 PM Paraguay o jueves 23 a las 5 PM Paraguay · decime cuál te acomoda
 
 El viernes tu pareja es Hugo (FE dev) · fase Contratos API ·
 ustedes cierran el puente entre producto y técnica · tu lado
@@ -545,7 +545,7 @@ Gracias por venir al taller. Como PM de ulab tu mirada producto
 es clave para que este way of work sirva al equipo real ·
 no quede en teoría de arquitectos.
 
-Antes del próximo viernes (<FECHA_VIERNES>) una sola cosa ·
+Antes del próximo viernes 24/4 a las 11:00 Paraguay una sola cosa ·
 dejar la compu lista para el ejercicio en vivo.
 
 2 opciones, elegís:
@@ -561,7 +561,7 @@ Opción 1 · lo hacés solo · 30-40 min
 
 Opción 2 · 20 min de videollamada conmigo
    Si la terminal te saca · mejor esto · lo hacemos juntos:
-   <CALENDLY_LINK>
+   miércoles 22 (hoy) a las 5 PM Paraguay o jueves 23 a las 5 PM Paraguay · decime cuál te acomoda
 
 ¿Y si no llegás? Venís igual · el viernes trabajás con Carlos ·
 tu rol no cambia.
@@ -592,7 +592,7 @@ la semana que viene.
 Material completo + kit de instalación en:
 https://github.com/juan-estrada-itti/way-of-work-tools
 
-Antes del próximo viernes <FECHA_VIERNES>, 2 tareas async:
+Antes del próximo viernes 24/4 a las 11:00 (Paraguay), 2 tareas async:
 
   • Instalar el kit en tu compu (30-40 min)
   • Traer 1 idea de feature greenfield para el ejercicio
@@ -623,8 +623,8 @@ Feliz de cómo arrancamos · nos vemos el viernes ·
 # Checklist antes de apretar send
 
 Por cada mensaje:
-- [ ] Reemplazaste `<FECHA_VIERNES>` con la fecha+hora reales
-- [ ] Reemplazaste `<CALENDLY_LINK>` donde corresponde (no-técnicos + Stephany + Carlos)
+- [ ] Reemplazaste `24/4 a las 11:00 (Paraguay)` con la fecha+hora reales
+- [ ] Reemplazaste `miércoles 22 (hoy) a las 5 PM Paraguay o jueves 23 a las 5 PM Paraguay · decime cuál te acomoda` donde corresponde (no-técnicos + Stephany + Carlos)
 - [ ] Saludás con el nombre correcto (ojo con los 2 Nicolás)
 - [ ] Verificaste que el DM es individual, no grupal
 
