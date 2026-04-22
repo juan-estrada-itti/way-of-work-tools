@@ -1,0 +1,254 @@
+# Pipeline SDD · reglas de transición declarativas
+# ──────────────────────────────────────────────────
+#
+# Este archivo declara CUÁNDO ejecutar qué skill a continuación.
+# Lo consume /sdd-router para recomendar el próximo paso
+# según el estado actual del repo.
+#
+# Modelo · Máquina de Mealy con guards declarativos:
+#   - Estado actual = qué artefactos existen en el repo
+#   - Transición = skill que se ejecuta
+#   - Guard = condición evaluable (puede inspeccionar contenido)
+#   - Output = nuevo artefacto + razón textual
+#
+# Cómo se usa:
+#   1. /sdd-router escanea el repo (busca artefactos)
+#   2. Evalúa guards en orden
+#   3. Emite la primera regla que matchea
+#   4. Si 0 reglas matchean → alerta "estado inconsistente"
+#   5. Si >1 reglas matchean → alerta "guards ambiguas, revisar"
+#
+# Última actualización: 2026-04-22
+
+version: 1.0.0
+applies_to: [greenfield, brownfield]
+
+# ────────────────────────────────────────────────
+# Estados observables · cómo detecta /sdd-router
+# ────────────────────────────────────────────────
+observables:
+  # Artefactos básicos · presencia de archivo
+  has_discovery: "file_exists(docs/00-discovery/discovery.md)"
+  has_prd: "file_exists(docs/01-prd/prd.md)"
+  has_rfc: "file_exists(docs/02-rfc/rfc.md)"
+  has_adrs: "glob_count(docs/04-adrs/ADR-*.md) > 0"
+  has_contract: "file_exists(docs/03-contracts/api-contract.md)"
+  has_stories: "file_exists(docs/05-stories/stories.md)"
+  has_any_plan: "glob_count(docs/06-plans/plan-H*.md) > 0"
+  has_all_plans: "glob_count(docs/06-plans/plan-H*.md) >= count_historias_en(stories.md)"
+  has_dag: "file_exists(docs/07-dag/tasks.json)"
+  has_pr: "git_pr_exists() OR git_branch_ahead_of_main()"
+  has_review: "glob_count(docs/08-reviews/review-*.md) > 0"
+  has_claude_md: "file_exists(CLAUDE.md)"
+
+  # Guards con contenido · inspecciona artefactos
+  rfc_tiene_muchas_decisiones: "count_architectural_decisions(docs/02-rfc/rfc.md) > 5"
+  pipeline_tipo: "detect_greenfield_vs_brownfield(.)"
+
+# ────────────────────────────────────────────────
+# Reglas de transición · ordenadas por prioridad
+# ────────────────────────────────────────────────
+# Cada regla es: precondición → próxima acción
+# /sdd-router evalúa de arriba a abajo, emite la primera que matchea.
+
+transitions:
+
+  # ─── V3 · CLAUDE.md obligatorio antes de codear ───────────
+  - id: V3_claude_md_missing
+    priority: 100
+    when:
+      any:
+        - has_stories
+        - has_any_plan
+        - has_dag
+      and:
+        not: has_claude_md
+    do:
+      next: "⚠ CREAR CLAUDE.md ANTES DE CONTINUAR"
+      why: "V3 del way of work · sin CLAUDE.md no se puede generar código"
+      skill: null
+      severity: blocker
+
+  # ─── Fase 1 · Discovery ──────────────────────────────────
+  - id: start_discovery
+    priority: 10
+    when:
+      not: has_discovery
+    do:
+      next: /office-hours
+      why: "No hay discovery · arrancá validando el problema con las 6 preguntas YC"
+      severity: info
+
+  # ─── Fase 2 · PRD ────────────────────────────────────────
+  - id: discovery_to_prd
+    priority: 20
+    when:
+      all: [has_discovery]
+      not: has_prd
+    do:
+      next: /create-prd
+      why: "Discovery completo · ahora documentá el PRD de negocio (QUÉ + POR QUÉ)"
+      gate: "Líder de producto valida scope del PRD"
+      severity: info
+
+  # ─── Fase 3 · RFC ────────────────────────────────────────
+  - id: prd_to_rfc
+    priority: 30
+    when:
+      all: [has_prd]
+      not: has_rfc
+    do:
+      next: /rfc-builder
+      why: "PRD aprobado · ahora la propuesta técnica (CÓMO)"
+      severity: info
+
+  # ─── Fase 4 · ADRs (V4: solo si RFC tiene >5 decisiones) ─
+  - id: rfc_to_adrs_v4
+    priority: 40
+    when:
+      all: [has_rfc, rfc_tiene_muchas_decisiones]
+      not: has_adrs
+    do:
+      next: /rfc-to-adr
+      why: "V4 · RFC tiene más de 5 decisiones arquitectónicas · partilo en ADRs"
+      gate: "Arquitectos revisan cada ADR antes de aceptarlo"
+      severity: enforced
+
+  # ─── Fase 5 · Contrato (post-ADRs o directo si pocas decisiones) ─
+  - id: rfc_to_contract_direct
+    priority: 50
+    when:
+      all: [has_rfc]
+      not: [rfc_tiene_muchas_decisiones, has_contract]
+    do:
+      next: /contract-define
+      why: "RFC con pocas decisiones · vas directo al contrato API"
+      severity: info
+
+  - id: adrs_to_contract
+    priority: 51
+    when:
+      all: [has_rfc, has_adrs]
+      not: has_contract
+    do:
+      next: /contract-define
+      why: "ADRs documentados · ahora el contrato API compartido FE/BE"
+      gate: "FE + BE validan el contrato antes de codear"
+      severity: info
+
+  # ─── Fase 6 · Historias ─────────────────────────────────
+  - id: contract_to_stories
+    priority: 60
+    when:
+      all: [has_contract]
+      not: has_stories
+    do:
+      next: /user-story-builder
+      why: "Contrato aprobado · ahora historias INVEST para el PRD"
+      severity: info
+
+  # ─── Fase 6.5 · Plan por historia (V5) ───────────────────
+  - id: stories_to_plans
+    priority: 70
+    when:
+      all: [has_stories]
+      not: has_all_plans
+    do:
+      next: /story-to-plan
+      why: "V5 · cada historia necesita plan micro con governance cargada antes del DAG"
+      iteration: "Correr 1 vez por historia pendiente de plan"
+      severity: enforced
+
+  # ─── Fase 7 · DAG macro ──────────────────────────────────
+  - id: plans_to_dag
+    priority: 80
+    when:
+      all: [has_all_plans]
+      not: has_dag
+    do:
+      next: /task-dependency-analyzer
+      why: "Todos los plan-H<N>.md listos · armá el DAG macro con análisis de dependencias"
+      gate: "Tech lead valida el grafo antes de ejecutar"
+      severity: info
+
+  # ─── Fase 8 · Código ─────────────────────────────────────
+  - id: dag_to_code
+    priority: 90
+    when:
+      all: [has_dag]
+      not: has_pr
+    do:
+      next: "[CÓDIGO · Claude Code · Cursor · Copilot]"
+      why: "DAG validado · ejecutar cada subtask por su prompt del JSON Agents Kanban"
+      skill: null
+      severity: info
+
+  # ─── Fase 9 · Review ─────────────────────────────────────
+  - id: pr_to_review
+    priority: 95
+    when:
+      all: [has_pr]
+      not: has_review
+    do:
+      next: /code-review
+      why: "PR abierto · validar contra specs (PRD + RFC + contrato + ADRs + plan) antes de merge"
+      gate: "Revisor humano aprueba · después merge"
+      severity: info
+
+  # ─── Fase final ──────────────────────────────────────────
+  - id: done
+    priority: 99
+    when:
+      all: [has_review]
+    do:
+      next: "[MERGE]"
+      why: "Todo el pipeline completo · podés mergear"
+      skill: null
+      severity: info
+
+# ────────────────────────────────────────────────
+# Hooks post-skill · sugerencia automática
+# ────────────────────────────────────────────────
+# Después de cada skill, /sdd-router puede ejecutarse automáticamente
+# y proponer el próximo paso.
+hooks:
+  post_skill_completion:
+    auto_evaluate: true
+    message_template: |
+      ✓ {skill} completa · produjo {artifact}
+
+      Próximo paso sugerido: {next_skill}
+      Razón: {why}
+      {if gate: ⚠ Gate humano requerido: {gate}}
+
+# ────────────────────────────────────────────────
+# Severity · cómo /sdd-router presenta la sugerencia
+# ────────────────────────────────────────────────
+severity_levels:
+  info:
+    prefix: "→"
+    description: "Sugerencia · seguí si tiene sentido en tu contexto"
+  enforced:
+    prefix: "⚠"
+    description: "Obligatorio por reglas V1-V5 del way of work · no saltar"
+  blocker:
+    prefix: "🛑"
+    description: "Bloqueante · no podés avanzar hasta resolverlo"
+
+# ────────────────────────────────────────────────
+# Fallbacks · qué hace /sdd-router si no matchea nada
+# ────────────────────────────────────────────────
+fallbacks:
+  no_match:
+    message: |
+      Estado no reconocido · los artefactos presentes no coinciden
+      con ninguna transición conocida. Posibles causas:
+        1. Saltaste una fase · falta un artefacto obligatorio
+        2. Renombraste archivos · el router no los detecta
+        3. Pipeline incompleto · reportá en #way-of-work
+    action: "Mostrar artefactos encontrados + pedir intervención humana"
+
+  multiple_matches:
+    message: |
+      Múltiples reglas matchean · guards ambiguas. Revisá:
+    action: "Listar las reglas que matchearon · pedir al usuario elegir"

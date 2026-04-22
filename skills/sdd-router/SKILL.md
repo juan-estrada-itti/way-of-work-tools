@@ -1,7 +1,8 @@
 ---
 name: sdd-router
-description: "Guía del way of work SDD en tech emergentes. Arranca cualquier tarea y redirige al siguiente paso correcto del pipeline (qué skill correr + por qué + qué preparar). Hace 3 preguntas diagnósticas (insumo, rol, iniciativa) y aplica 14 reglas de ruteo + 4 validaciones críticas. Use when: el usuario no sabe por dónde empezar, tiene un artefacto y duda del siguiente paso, está arrancando iteración sobre academy o ittilab, o es nuevo en el equipo. Triggers: 'por donde empiezo', 'que skill uso', 'sdd router', 'router', 'way of work', 'no se por donde', 'que sigue', 'siguiente paso', 'guía SDD', 'ayudame a empezar'."
-version: 1.0.0
+version: 2.0.0
+description: "Router del way of work SDD · detecta el estado actual del repo y enforca el próximo paso del pipeline según reglas declarativas de PIPELINE-TRANSITIONS.yml. Escanea artefactos existentes, evalúa guards condicionales, y emite la transición correcta con su razón y gate humano requerido. Opera en 2 modos: escaneo automático (state-based) y preguntas diagnósticas (user-based). Triggers: 'por donde empiezo', 'que skill uso', 'sdd router', 'que sigue', 'siguiente paso', 'what next', 'próximo paso'."
+
 triggers:
   - por donde empiezo
   - que skill uso
@@ -13,15 +14,132 @@ triggers:
   - siguiente paso
   - guía SDD
   - ayudame a empezar
+  - what next
+  - próximo paso
+  - enforcer pipeline
+
+pipeline:
+  phase: meta-orchestration
+  applies_to: [greenfield, brownfield]
+  position_greenfield: meta
+  position_brownfield: meta
+
+dependencies:
+  consumes:
+    - artifact: cualquier artefacto del pipeline
+      required: false
+      note: "escanea el repo completo · detecta qué hay"
+    - artifact: PIPELINE-TRANSITIONS.yml
+      path_hint: pipeline/PIPELINE-TRANSITIONS.yml
+      required: true
+      note: "fuente de verdad de las reglas de transición"
+  produces:
+    - artifact: recomendación de próximo paso
+      cardinality: 1..1
+  upstream: []
+  downstream: [cualquier skill del pipeline]
 ---
 
-# SDD Router · Guía del way of work
+# SDD Router · Enforcer del pipeline SDD
 
-Soy el router del way of work SDD en tech emergentes / venture lab. Mi trabajo es ubicarte en el pipeline y recomendarte la skill correcta a correr — no ejecutar el trabajo, solo decirte qué skill correr próximo y por qué.
+Soy el router del way of work SDD en tech emergentes / venture lab. Mi trabajo es:
+1. **Detectar el estado actual del repo** (qué artefactos ya existen)
+2. **Aplicar las reglas de transición** de `pipeline/PIPELINE-TRANSITIONS.yml`
+3. **Recomendar el próximo paso** con su razón y gate humano requerido
 
-## Proceso
+No ejecuto el trabajo · solo decido qué skill correr próximo y por qué.
 
-Hago 3 preguntas **una a la vez** (no todas juntas). Después aplico reglas de ruteo y te devuelvo una recomendación estructurada.
+## Dos modos de operación
+
+### Modo A · State-based (automático) · recomendado
+
+El usuario ya tiene un repo en curso. Corrés el router sin args · escanea el filesystem · encuentra los artefactos · matchea contra `PIPELINE-TRANSITIONS.yml`.
+
+**Flujo**:
+1. Detectar artefactos observables (discovery.md · prd.md · rfc.md · etc.)
+2. Evaluar guards (ej: ¿RFC tiene más de 5 decisiones?)
+3. Matchear la regla de transición de mayor prioridad
+4. Emitir recomendación estructurada
+
+**Output esperado**:
+```
+Estado detectado:
+  ✓ discovery.md
+  ✓ prd.md
+  ✓ rfc.md
+  ⚠ rfc_tiene_muchas_decisiones: true (7 decisiones)
+  ✗ docs/04-adrs/*
+  ✗ api-contract.md
+
+Regla matcheada: rfc_to_adrs_v4 (priority 40, severity: enforced)
+
+→ Próximo paso: /rfc-to-adr
+
+Por qué: V4 del way of work · RFC tiene más de 5 decisiones arquitectónicas,
+debe partirse en ADRs antes del contrato.
+
+Gate humano: arquitectos revisan cada ADR antes de aceptarlo.
+
+Artefactos a producir: docs/04-adrs/ADR-001-*.md ... ADR-007-*.md
+```
+
+### Modo B · User-based (diagnóstico por preguntas) · para nuevos al equipo
+
+Si no hay repo o el usuario está empezando · hago 3 preguntas diagnósticas.
+
+## Modo A en detalle · reglas de transición
+
+Las reglas viven en `pipeline/PIPELINE-TRANSITIONS.yml`. Tienen esta forma:
+
+```yaml
+- id: nombre_de_la_regla
+  priority: <int>  # mayor = se evalúa primero
+  when:
+    all: [observables...]   # todas deben ser true
+    any: [observables...]   # al menos una debe ser true
+    not: [observables...]   # ninguno debe ser true
+  do:
+    next: <skill o acción>
+    why: <razón textual>
+    gate: <gate humano si aplica>
+    severity: info | enforced | blocker
+```
+
+### Cómo evalúo
+
+1. Leo `PIPELINE-TRANSITIONS.yml`
+2. Escaneo el repo para detectar observables (archivos + conteos + contenido)
+3. Itero reglas ordenadas por `priority` descendente
+4. Para cada regla, evalúo `when` contra los observables
+5. La **primera** regla que matchea gana → emito su `do`
+6. Si ninguna matchea → fallback "no_match" (muestra artefactos, pide intervención)
+7. Si múltiples matchean con misma priority → fallback "multiple_matches" (pide desambiguar)
+
+### Guards con inspección de contenido
+
+Algunas observables requieren leer el contenido de artefactos:
+
+- `rfc_tiene_muchas_decisiones` · cuenta las decisiones arquitectónicas explícitas en `rfc.md` (busca sección "decisiones" o heurística)
+- `pipeline_tipo` · detecta si es greenfield (no hay `src/`) o brownfield (hay código)
+- `count_historias_en(stories.md)` · cuenta historias declaradas como `H1`, `H2`, ...
+
+Si un guard no se puede evaluar (ej: archivo malformado) · emito warning y la regla queda como "indeterminada".
+
+### Severities
+
+- `info` → simple sugerencia · el usuario decide
+- `enforced` → obligatorio por V1-V5 del way of work · no saltar
+- `blocker` → no podés avanzar hasta resolverlo (ej: falta CLAUDE.md)
+
+## Modo B · Preguntas diagnósticas (para nuevos)
+
+Si el usuario está arrancando desde cero o no tiene repo, hago 3 preguntas **una a la vez** (no todas juntas).
+
+### Pregunta 1 · ¿Qué tenés HOY como insumo?
+
+a) Solo una idea o intuición sin validar
+b) Un problema validado con usuarios, sin documento
+c) Un PRD de negocio escrito (con JTBD, segmento, problema validado)
 
 ### Pregunta 1 · ¿Qué tenés HOY como insumo?
 
