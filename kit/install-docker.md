@@ -109,6 +109,59 @@ Funciona si modificás el script para que clone a un path montado (ej: `/home/cl
 
 ---
 
+## Habilitar `git push` desde el contenedor
+
+Por default, el contenedor no tiene tu identidad git ni tus credenciales · cualquier `git push` falla pidiendo autenticación. Para que Claude Code pueda commitear + pushear como vos, agregá dos volúmenes al `docker run`:
+
+```bash
+docker run -it --rm \
+    --platform linux/arm64 \
+    --name "$CONTAINER_NAME" \
+    --env-file "$SCRIPT_DIR/.env" \
+    -v "$WORK_DIR":/workspace \
+    -v "$SCRIPT_DIR/claude-config":/home/claude/.claude \
+    -v "$SHARED_DIR":/shared \
+    -v "$HOME/.gitconfig":/home/claude/.gitconfig:ro \
+    -v "$HOME/.ssh":/home/claude/.ssh:ro \
+    claude-code:latest "$@"
+```
+
+- `~/.gitconfig` (read-only) · lleva tu `user.name` + `user.email` al contenedor
+- `~/.ssh` (read-only) · lleva tus claves privadas · funciona con remotes SSH (`git@github.com:...`)
+
+### ⚠️ macOS · `osxkeychain` no funciona adentro
+
+Si tu `~/.gitconfig` declara `credential.helper = osxkeychain`, el contenedor (Linux) no puede usarlo · `git push` sobre HTTPS va a colgar. Dos caminos:
+
+**Camino A · usar SSH** (recomendado) · pasá los remotes a SSH:
+```bash
+git remote set-url origin git@github.com:<org>/<repo>.git
+```
+
+**Camino B · credential helper portable** · si necesitás HTTPS, generá un fine-grained PAT y guardalo en un archivo que se monte al contenedor:
+```bash
+# en tu Mac
+echo "https://<usuario>:<pat>@github.com" > ~/.git-credentials-docker
+chmod 600 ~/.git-credentials-docker
+```
+Y al `run.sh` agregale:
+```bash
+-v "$HOME/.git-credentials-docker":/home/claude/.git-credentials:ro \
+-e GIT_CONFIG_COUNT=1 \
+-e GIT_CONFIG_KEY_0=credential.helper \
+-e GIT_CONFIG_VALUE_0=store
+```
+
+### Verificar
+
+Adentro del contenedor:
+```bash
+git config user.email     # tiene que imprimir tu email
+ssh -T git@github.com     # tiene que decir "Hi <usuario>!"
+```
+
+---
+
 ## Troubleshooting
 
 | Síntoma | Solución |
@@ -118,6 +171,8 @@ Funciona si modificás el script para que clone a un path montado (ej: `/home/cl
 | `git clone` falla por SSH | Los repos del kit son públicos · usá HTTPS como está en el ejemplo |
 | `~/.claude` no está montado | Editá tu `run.sh` para agregar `-v /host/claude-config:/home/claude/.claude` |
 | Skills duplicadas (nombre-X · nombre-X 2) | Borraste symlinks y el FS los recreó · limpiá `skills/` y corré Paso 2 otra vez |
+| `git push` pide auth adentro del contenedor | Montá `~/.ssh` + `~/.gitconfig` · ver sección arriba |
+| `git push` cuelga en macOS | `osxkeychain` no corre en Linux · pasá remote a SSH o usá el camino B |
 
 ---
 
