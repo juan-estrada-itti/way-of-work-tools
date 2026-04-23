@@ -135,10 +135,15 @@ Juan
 ```
 Fede ·
 
-Gracias por el taller · tu mirada de AI eng dio contexto técnico
-que el resto no hubiera tenido de otra forma.
+Gracias por la primera sesión Way of Work. Tenemos el taller
+Green Field el próximo viernes 24/4 de 4:30 a 6:00 PM Paraguay.
 
-Antes del viernes 24/4 de 4:30 a 6:00 PM Paraguay:
+Tu pareja · Andrés · fase RFC (3ª del relay).
+Van a leer el PRD que deje Sergio+Javier · producir el rfc.md
+con la propuesta técnica · pasa a Hugo+Juan Pa para que lo
+partan en ADRs si tiene más de 5 decisiones.
+
+Lo que necesitamos de vos antes:
 
 1 · Kit instalado · 10 min:
 https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
@@ -146,16 +151,7 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
    Y cloná el repo del viernes (workspace del relay · 2 min):
    https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
-   Fijate especialmente en skills-overlays/ · son las v2 que
-   agregan schema de dependencias al frontmatter · si te
-   convencen, las PR'eas al repo tech_emergentes_skills.
-
-2 · 1 idea greenfield para el relay · puede ser algo de tu
-stack favorito (LangGraph · agentes · lo que te pinte).
-
-Una cosa que me quedó rondando · el grafo de dependencias entre
-skills está declarativo ahora · si sabés de alguna forma más
-elegante de representarlo (tipo pipeline-as-code), hablemos.
+2 · 1 idea greenfield para el relay · lo que te pinte construir.
 
 Nos vemos viernes ·
 Juan
