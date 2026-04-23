@@ -89,8 +89,9 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
 
 2 · Pensá 1 idea greenfield · real o inventada · la traés el viernes.
 
-PS · si ves algo del script que mejoraría (mirando que lo uses
-con Cursor también), PR al repo y lo revisamos.
+Tu pareja · Javier · fase PRD (2ª del relay).
+Leen el discovery que deje Juan Ma+Stephany · producen prd.md ·
+pasa a Fede+Andrés para el RFC.
 
 Cualquier cosa ·
 Juan
@@ -175,13 +176,13 @@ https://github.com/juan-estrada-itti/way-of-work-tools/blob/main/kit/INSTALL.md
    Y cloná el repo del viernes (workspace del relay · 2 min):
    https://github.com/juan-estrada-itti/taller-sdd-favoritos
 
-El viernes · relay de 8 parejas · tu pareja es Fede · fase RFC.
-Son 90 min. Tu presencia como head importa tanto o más que la
-de cualquier otro.
+Tu pareja · Fede · fase RFC (3ª del relay).
+Leen el PRD que deje Sergio+Javier · producen rfc.md con la
+propuesta técnica · pasa a Hugo+Juan Pa para los ADRs si tiene
+más de 5 decisiones.
 
-Una nota · mientras probás el kit, si notás algo que no
-cierra con la visión que tenés de tech emergentes, avisame.
-Este sistema no es mío · es del equipo · se ajusta.
+Son 90 min. Tu presencia como head importa · fija el tono del
+resto del equipo.
 
 Cualquier cosa ·
 Juan
