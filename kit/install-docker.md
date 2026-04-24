@@ -23,6 +23,24 @@ Cloná el repo **dentro** de la carpeta que el contenedor monta como `~/.claude`
 
 ---
 
+## Atajo · un solo comando (recomendado)
+
+Si tu mount está en el default (`~/claude-code-docker/claude-config`) y solo querés que funcione:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit-docker.sh | bash
+```
+
+Si tu `claude-config` vive en otra ruta, pasala como argumento:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/juan-estrada-itti/way-of-work-tools/main/kit/install-kit-docker.sh) /ruta/a/tu/claude-config
+```
+
+El script hace exactamente los pasos 1-2 de abajo · cloná + symlinks relativos. Si preferís entender qué hace antes de correrlo, seguí el paso a paso.
+
+---
+
 ## Paso 1 · Identificá tu mount
 
 Abrí tu `run.sh` (o `docker run`) y buscá la línea que monta `~/.claude`. Ejemplo del stack `claude-code-docker`:
