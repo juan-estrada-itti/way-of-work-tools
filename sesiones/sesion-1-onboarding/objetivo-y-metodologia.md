@@ -42,7 +42,7 @@ Al final de las 5 sesiones del plan, el equipo sabe:
 |---|---|---|
 | **Facilitador principal** | Juan | Diseña sesiones · modera talleres · 1-on-1s |
 | **Soporte operativo** | Alejo | Cuida chat del taller · emoji signals · plan B técnico |
-| **Líder técnico invitado** | Javier (a veces) | Aporta perspectiva arquitectónica |
+| **Líder técnico invitado** | Javier | Aporta perspectiva arquitectónica |
 | **Participantes** | Los 16 | Traen iniciativas reales · practican el flujo |
 
 ### Formato de cada sesión
